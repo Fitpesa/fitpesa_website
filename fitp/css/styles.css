@@ -1,0 +1,52 @@
+/* FitPesa Custom Styles */
+
+:root {
+    --primary-red: #dc2626;
+    --primary-red-hover: #b91c1c;
+    --light-red: #fee2e2;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page-transition {
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mobile-menu {
+    transition: all 0.3s ease;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better focus states for accessibility */
+a:focus, button:focus, input:focus, select:focus {
+    outline: 2px solid var(--primary-red);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    header, footer, .mobile-menu {
+        display: none;
+    }
+}

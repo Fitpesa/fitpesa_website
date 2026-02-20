@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FitPesa - Turn everyday movement into real value. Walk, earn FITP tokens, and access loans, marketplace, and more. Built for Africa.">
+    <meta name="keywords" content="walk to earn, fitness rewards, FITP token, African fintech, mobile money, micro loans">
+    <meta name="author" content="FitPesa Limited">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fitpesa.com/">
+    <meta property="og:title" content="FitPesa - Walk. Earn. Live Better.">
+    <meta property="og:description" content="Turn everyday movement into real value with FitPesa">
+    <meta property="og:image" content="https://fitpesa.com/logo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fitpesa.com/">
+    <meta property="twitter:title" content="FitPesa - Walk. Earn. Live Better.">
+    <meta property="twitter:description" content="Turn everyday movement into real value with FitPesa">
+    <meta property="twitter:image" content="https://fitpesa.com/logo.jpeg">
+
+    <title>FitPesa - Walk. Earn. Live Better.</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpeg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900 antialiased">
+    <!-- Header -->
+    <header id="header" class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <a href="index" class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold">FP</div>
+                    <div>
+                        <h1 class="text-xl font-semibold">FitPesa</h1>
+                        <p class="text-xs text-gray-500">Walk. Earn. Live Better.</p>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+                <a href="index" class="hover:text-red-600 font-semibold text-red-600">Home</a>
+                <a href="market" class="hover:text-red-600">PesaMarket</a>
+                <a href="loans" class="hover:text-red-600">PesaLoans</a>
+                <a href="chat" class="hover:text-red-600">PesaChat</a>
+                <a href="fitlovers" class="hover:text-red-600">FitLovers</a>
+                <a href="projects" class="hover:text-red-600">PesaProjects</a>
+                <a href="pay" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition">PesaPay</a>
+                <a href="download" class="px-4 py-2 border border-red-600 text-red-600 rounded-md hover:bg-red-50 transition">Join Beta</a>
+            </nav>
+
+            <div class="md:hidden">
+                <button id="mobile-menu-btn" class="px-3 py-2 border rounded-md hover:bg-gray-50">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden mobile-menu bg-white border-b px-6 py-4">
+            <div class="flex flex-col gap-3">
+                <a href="index" class="py-2 hover:text-red-600 font-semibold text-red-600">Home</a>
+                <a href="market" class="py-2 hover:text-red-600">PesaMarket</a>
+                <a href="loans" class="py-2 hover:text-red-600">PesaLoans</a>
+                <a href="chat" class="py-2 hover:text-red-600">PesaChat</a>
+                <a href="fitlovers" class="py-2 hover:text-red-600">FitLovers</a>
+                <a href="projects" class="py-2 hover:text-red-600">PesaProjects</a>
+                <a href="pay" class="py-2 hover:text-red-600">PesaPay</a>
+                <a href="download" class="py-2 hover:text-red-600">Join Beta</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-b from-red-50 to-white fade-in">
+            <div class="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold text-red-700 leading-tight">FitPesa. Walk. Earn. Live Better.</h2>
+                    <p class="mt-6 text-lg text-gray-700">Turn everyday movement into real value. Walk from River Road to Jomo Kenyatta and earn FITP tokens you can spend in PesaMarket, borrow against in PesaLoans, or convert to mobile money.</p>
+
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://www.dropbox.com/s/replace-with-your-apk/FitPesa-Beta.apk?dl=1" target="_blank" 
+                           class="inline-flex items-center justify-center gap-3 px-5 py-3 bg-red-600 text-white rounded-md shadow hover:shadow-lg hover:bg-red-700 transition">
+                            <i class="fab fa-android text-xl"></i>
+                            Download Android Beta
+                            <span class="text-xs opacity-80">APK</span>
+                        </a>
+                        <a href="download" class="inline-flex items-center justify-center gap-2 px-5 py-3 border border-red-600 text-red-600 rounded-md hover:bg-red-50 transition">
+                            Join Beta
+                        </a>
+                    </div>
+
+                    <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600">
+                        <li><i class="fas fa-gift text-red-600 mr-2"></i>1000 FITP welcome bonus</li>
+                        <li><i class="fas fa-mobile-alt text-red-600 mr-2"></i>MTN MoMo, Airtel Money, OPay, M-Pesa integrations</li>
+                        <li><i class="fas fa-store text-red-600 mr-2"></i>Hawker Mode & marketplace for street vendors</li>
+                        <li><i class="fas fa-hand-holding-usd text-red-600 mr-2"></i>Use FITP as collateral for micro-loans</li>
+                    </ul>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-2xl shadow-2xl overflow-hidden bg-white border">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="Person walking and earning tokens" 
+                             class="w-full h-96 object-cover">
+                    </div>
+
+                    <div class="absolute left-4 bottom-6 bg-white/90 backdrop-blur-sm px-4 py-3 rounded-xl shadow-md border">
+                        <div class="text-xs text-gray-500">Today</div>
+                        <div class="font-semibold text-red-600">+ 24 FITP</div>
+                        <div class="text-xs text-gray-600">River Rd → Jomo Kenyatta Rd</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="max-w-6xl mx-auto px-6 py-12 fade-in">
+            <h3 class="text-2xl font-bold text-gray-800">What we build</h3>
+            <p class="mt-2 text-gray-600">From walk-to-earn mechanics to real-world infrastructure projects — FitPesa brings digital value into everyday life.</p>
+
+            <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shopping-bag text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">PesaMarket</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Buy native products priced in FITP. Support local sellers and spend tokens where they matter.</p>
+                    <a href="market" class="mt-4 inline-block text-sm text-red-600 hover:underline">View details →</a>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-hand-holding-usd text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">PesaLoans</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Micro-loans backed by FITP. Borrow, repay in FITP, or use FITP as collateral.</p>
+                    <a href="loans" class="mt-4 inline-block text-sm text-red-600 hover:underline">View details →</a>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-comments text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">PesaChat</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Private chats with friends, family, and other users. Find users by username.</p>
+                    <a href="chat" class="mt-4 inline-block text-sm text-red-600 hover:underline">View details →</a>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-walking text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">Hawker Mode</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Designed for street vendors and traders — earn while you hustle.</p>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-solar-panel text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">PesaProjects</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Solar tuk-tuks, electric bikes, rental homes — tokenize access to shared assets.</p>
+                    <a href="projects" class="mt-4 inline-block text-sm text-red-600 hover:underline">View details →</a>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-alt text-red-600 text-xl"></i>
+                    </div>
+                    <h5 class="font-semibold text-red-700">Mobile Money</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Plug into MTN MoMo, Airtel Money, OPay and M-Pesa for seamless cash outs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market Promo Section -->
+        <section class="bg-red-50 py-12 fade-in">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h4 class="text-3xl font-bold text-red-700">PesaMarket</h4>
+                    <p class="mt-4 text-gray-700">A native marketplace priced in FITP. Buy household goods, services, and locally-made products — all while keeping value inside the FitPesa ecosystem.</p>
+
+                    <ul class="mt-6 list-disc ml-6 text-gray-600 space-y-2">
+                        <li>Local vendors and hawkers</li>
+                        <li>Buy with FITP or convert to mobile money</li>
+                        <li>Escrow support for secure trades</li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <a href="market" class="inline-block px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition shadow">Explore PesaMarket</a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white border">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         alt="PesaMarket preview" 
+                         class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Preview Section -->
+        <section class="max-w-6xl mx-auto px-6 py-12 fade-in">
+            <h3 class="text-2xl font-bold">PesaProjects — real world, tokenized access</h3>
+            <p class="mt-2 text-gray-600">We plan to integrate transport, housing, and energy into the FitPesa ecosystem.</p>
+
+            <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <h5 class="font-semibold text-red-700">Solar Tuk-Tuks</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Shared solar-powered transport you can book and pay with FITP.</p>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <h5 class="font-semibold text-red-700">Electric Bikes & Buses</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Cleaner transport options integrated into the app.</p>
+                </div>
+                <div class="p-6 bg-white border rounded-xl shadow-sm hover:shadow-md transition">
+                    <h5 class="font-semibold text-red-700">Tokenized Rentals</h5>
+                    <p class="mt-2 text-gray-600 text-sm">Rent properties using FITP — pay, reserve and unlock with your account.</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <a href="projects" class="inline-block px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition shadow">Explore PesaProjects</a>
+            </div>
+        </section>
+
+        <!-- Loans Preview Section -->
+        <section class="bg-red-50 py-12 fade-in">
+            <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h4 class="text-3xl font-bold text-red-700">PesaLoans</h4>
+                    <p class="mt-4 text-gray-700">Use your FITP as collateral or repay interest with FITP. Micro-loans for short-term needs, designed for daily life.</p>
+
+                    <ul class="mt-6 list-disc ml-6 text-gray-600 space-y-2">
+                        <li>Low-threshold micro-loans</li>
+                        <li>Flexible repayment with FITP or mobile money</li>
+                        <li>Designed for gig workers and traders</li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <a href="loans" class="inline-block px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition shadow">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="rounded-xl overflow-hidden shadow-lg bg-white border p-6">
+                    <div class="text-sm text-gray-500 font-semibold mb-4">Loan calculator (demo)</div>
+                    <div class="flex flex-col gap-3">
+                        <div>
+                            <label class="text-xs text-gray-500">Loan amount (KES)</label>
+                            <input type="number" class="w-full mt-1 p-3 border rounded-md focus:ring-2 focus:ring-red-500" placeholder="5000" value="5000">
+                        </div>
+                        <div>
+                            <button class="w-full px-4 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Beta CTA Section -->
+        <section class="py-12 bg-white fade-in">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="p-8 border rounded-xl bg-red-50 text-center">
+                    <h3 class="text-2xl font-bold text-red-700">Join the FitPesa Movement</h3>
+                    <p class="text-gray-700 mt-2 max-w-2xl mx-auto">Be among the first to shape the future of walk-to-earn, micro-loans, and real-world utility.</p>
+                    <a href="download" class="inline-block mt-6 px-8 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition shadow-lg">Join Beta</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="max-w-6xl mx-auto px-6 py-12 fade-in">
+            <h3 class="text-2xl font-bold text-center mb-8">Meet the Team</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-white border rounded-lg hover:shadow-md transition">
+                    <!-- Upload Balogun Olarenwaju's photo to images/team-ceo.jpg -->
+                    <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mx-auto overflow-hidden">
+                        <img src="images/team-ceo.jpg" 
+                             alt="Balogun Olarenwaju" 
+                             class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-24 h-24 bg-red-100 rounded-full flex items-center justify-center\'><i class=\'fas fa-user text-red-600 text-3xl\'></i></div>'">
+                    </div>
+                    <h4 class="font-semibold mt-4 text-center">Balogun Olarenwaju</h4>
+                    <div class="text-sm text-gray-600 text-center">CEO & Co-Founder</div>
+                    <p class="text-sm text-gray-600 mt-3 text-center">Visionary leader with hands-on product focus. Responsible for company strategy, product direction, and external partnerships.</p>
+                </div>
+
+                <div class="p-6 bg-white border rounded-lg hover:shadow-md transition">
+                    <!-- Upload Balogun Ademola's photo to images/team-cao.jpg -->
+                    <div class="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center mx-auto overflow-hidden">
+                        <img src="images/team-cao.jpg" 
+                             alt="Balogun Ademola" 
+                             class="w-full h-full object-cover"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'w-24 h-24 bg-red-100 rounded-full flex items-center justify-center\'><i class=\'fas fa-user text-red-600 text-3xl\'></i></div>'">
+                    </div>
+                    <h4 class="font-semibold mt-4 text-center">Balogun Ademola</h4>
+                    <div class="text-sm text-gray-600 text-center">CAO & Co-Founder (Chief Awareness Officer)</div>
+                    <p class="text-sm text-gray-600 mt-3 text-center">Leads community programs, growth, and social mission initiatives. Oversees FitPesa's poverty alleviation programs.</p>
+                </div>
+
+                <div class="p-6 bg-white border rounded-lg hover:shadow-md transition">
+                    <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto">
+                        <i class="fas fa-briefcase text-red-600 text-3xl"></i>
+                    </div>
+                    <h4 class="font-semibold mt-4 text-center">Join the team</h4>
+                    <p class="text-sm text-gray-600 mt-3 text-center">We're hiring remote-first builders, product, design and growth leads. Work with us to scale impact across Africa.</p>
+                    <div class="mt-4 text-center">
+                        <a href="download" class="inline-block px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 transition">See Open Roles</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-50 border-t mt-12">
+        <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <h5 class="font-bold text-red-700">FitPesa</h5>
+                <p class="text-gray-600 mt-2 text-sm">Built in Africa. For Africans. Turn movement into value.</p>
+                <div class="mt-4 flex gap-3">
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-red-600" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div>
+                <h6 class="font-semibold">Company</h6>
+                <ul class="mt-2 text-gray-600 text-sm space-y-1">
+                    <li><a href="" class="hover:underline">About</a></li>
+                    <li><a href="download" class="hover:underline">Careers / Join</a></li>
+                    <li><a href="mailto:support@fitpesa.com" class="hover:underline">Contact</a></li>
+                    <li><a href="support" class="hover:underline">Help & Support</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h6 class="font-semibold">Products</h6>
+                <ul class="mt-2 text-gray-600 text-sm space-y-1">
+                    <li><a href="market" class="hover:underline">PesaMarket</a></li>
+                    <li><a href="loans" class="hover:underline">PesaLoans</a></li>
+                    <li><a href="chat" class="hover:underline">PesaChat</a></li>
+                    <li><a href="pay" class="hover:underline">PesaPay</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h6 class="font-semibold">Legal</h6>
+                <ul class="mt-2 text-gray-600 text-sm space-y-1">
+                    <li><a href="privacy" class="hover:underline">Privacy Policy</a></li>
+                    <li><a href="terms" class="hover:underline">Terms of Service</a></li>
+                    <li><a href="deletion-policy" class="hover:underline">Data Deletion Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="border-t">
+            <div class="max-w-6xl mx-auto px-6 py-4 text-sm text-gray-500 flex flex-col md:flex-row justify-between gap-2">
+                <div>© <span id="current-year">2025</span> FitPesa. All rights reserved.</div>
+                <div>Registered in Nigeria</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
