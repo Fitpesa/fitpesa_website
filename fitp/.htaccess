@@ -4,6 +4,14 @@ RewriteBase /
 # Set default homepage
 DirectoryIndex index.html
 
+# Shared FitLovers post links: /post/<id> internally serves post.html (no
+# redirect, so the clean URL stays and post.html's JS can read the id from the
+# path). Must come before the clean-URL rules below.
+RewriteRule ^post/[^/]+/?$ /post.html [L]
+
+# Referral links: /refer/<id> -> download page with the code as a query param.
+RewriteRule ^refer/([^/]+)/?$ /download.html?ref=$1 [L]
+
 # Redirect .html extension to clean URL (301 permanent)
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L]
@@ -16,3 +24,13 @@ RewriteRule ^(.*)$ $1.html [L]
 # Remove trailing slashes (except for directories)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)/$ /$1 [R=301,L]
+
+# Android App Links: serve /.well-known/assetlinks.json as JSON, 200, no
+# rewrite/redirect (Android requires a clean 200 application/json response).
+# Some hosts hide dotfolders or mislabel .json — make both explicit.
+<IfModule mod_headers.c>
+    <Files "assetlinks.json">
+        ForceType application/json
+    </Files>
+</IfModule>
+RewriteRule ^\.well-known/assetlinks\.json$ - [L]
