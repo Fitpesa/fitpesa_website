@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Make Every Step Count · FitPesa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white font-sans">
+    </head>
+    <body id="body" class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white overflow-x-hidden transition-colors duration-300">
+
+        <!-- COMPLIANCE TOP BAR -->
+        <aside class="border-b border-gray-800 bg-gray-900 text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
+            <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
+                <div class="flex items-center gap-2 text-gray-400">
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+                </div>
+                <div class="hidden sm:flex items-center gap-4 text-gray-500">
+                    <a href="pesacard.html" class="text-rose-500 font-bold hover:underline">PesaCard Offline Solutions</a>
+                    <a href="legal.html#faq" class="hover:text-rose-500 transition-colors">FAQ</a>
+                    <a href="legal.html#privacy" class="hover:text-rose-500 transition-colors">POPIA Privacy</a>
+                </div>
+            </div>
+        </aside>
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <a href="index.html" class="text-2xl font-black tracking-tight flex items-center">
+                FiT<span class="text-rose-500">Pesa</span>
+            </a>
+            <nav class="hidden lg:flex gap-6 text-sm font-semibold">
+                <a href="fitlovers.html" class="text-rose-500 font-bold">FitLovers</a>
+                <a href="step-to-earn.html" class="text-rose-500">Make Every Step Count</a>
+                <a href="pesabands.html" class="hover:text-rose-500">PesaBands</a>
+                <a href="pesacard.html" class="hover:text-rose-500">PesaCard</a>
+                <a href="pesamarket.html" class="hover:text-rose-500">PesaMarket</a>
+                <a href="about.html" class="hover:text-rose-500">About Us</a>
+                <a href="contact.html" class="hover:text-rose-500">Contact / Partner</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO & VIDEO SHOWCASE -->
+    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <span class="text-xs font-bold uppercase text-rose-500 tracking-widest">Daily Micro-Earning</span>
+            <h1 class="text-4xl sm:text-5xl font-black leading-tight">
+                Let your daily steps pay for your daily bread.
+            </h1>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                Every 500 steps equals 10 programmable FITP loyalty points. Accumulate 5,000 FITP to unlock $1 in local fiat purchasing power. Use it for data, airtime, or subsidized pricing at Shoprite, BokkuMart, and Quickmart.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" class="bg-gradient-to-r from-rose-500 to-orange-500 text-white px-6 py-3 rounded-xl font-bold uppercase text-xs flex items-center gap-2 hover:opacity-90 transition-opacity">
+                    <i data-lucide="smartphone" class="w-4 h-4"></i> Start Swapping
+                </a>
+                <a href="#calculator" class="border border-rose-500 text-rose-500 px-6 py-3 rounded-xl font-bold uppercase text-xs flex items-center gap-2 hover:bg-rose-500/10 transition-colors">
+                    <i data-lucide="calculator" class="w-4 h-4"></i> Step-to-Cash Calculator
+                </a>
+            </div>
+        </div>
+
+        <!-- ASSET: 10-SEC VERTICAL VIDEO -->
+        <div class="flex justify-center">
+            <div class="relative w-64 h-[500px] bg-black rounded-[2.5rem] border-8 border-gray-800 shadow-2xl overflow-hidden flex items-center justify-center">
+                <!-- Video Prompt Note for Devs -->
+                <div class="absolute inset-0 p-4 flex flex-col items-center justify-center text-center bg-gray-900 z-0">
+                    <i data-lucide="video" class="w-8 h-8 text-rose-500 mb-2"></i>
+                    
+                </div>
+                <video autoplay loop muted playsinline class="relative z-10 w-full h-full object-cover opacity-97">
+                    <source src="walking-demo.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR SECTION -->
+    <section id="calculator" class="py-16 bg-gray-800 border-y border-gray-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-black">Step-to-Cash Projection Engine</h2>
+                <p class="text-xs text-gray-400 mt-2">Calculate your earning velocity across supported regions.</p>
+            </div>
+
+            <div class="bg-gray-900 p-8 rounded-3xl border border-gray-700 shadow-xl space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 mb-2">Target Days to Walk</label>
+                        <input type="number" id="calcDays" value="30" min="1" class="w-full bg-gray-800 border border-gray-700 p-3 rounded-xl focus:outline-none focus:border-rose-500 text-sm font-mono" oninput="calculateYield()">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-400 mb-2">Average Daily Steps</label>
+                        <input type="number" id="calcSteps" value="8000" min="500" step="500" class="w-full bg-gray-800 border border-gray-700 p-3 rounded-xl focus:outline-none focus:border-rose-500 text-sm font-mono" oninput="calculateYield()">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-700">
+                    <div class="text-center p-4 bg-gray-800 rounded-2xl">
+                        <div class="text-[10px] uppercase font-bold text-gray-400 mb-1">Total Steps</div>
+                        <div id="outSteps" class="text-xl font-black text-white">240,000</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-800 rounded-2xl">
+                        <div class="text-[10px] uppercase font-bold text-rose-500 mb-1">FITP Earned</div>
+                        <div id="outFitp" class="text-xl font-black text-rose-500">4,800</div>
+                    </div>
+                    <div class="text-center p-4 bg-gray-800 rounded-2xl">
+                        <div class="text-[10px] uppercase font-bold text-emerald-500 mb-1">Estimated Value (USD)</div>
+                        <div id="outUsd" class="text-xl font-black text-emerald-500">$0.96</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REGIONAL PARTNERSHIPS -->
+    <section class="py-16 max-w-7xl mx-auto px-4 text-center space-y-8">
+        <h3 class="text-sm font-black uppercase text-gray-400 tracking-widest">Supported Regional Gateways</h3>
+        <div class="flex flex-wrap justify-center gap-3 text-xs font-bold">
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">FNB</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">Capitec</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">Tyme Bank</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">Mukuru</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">OPay</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">Moniepoint</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">FirstBank</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">GTB</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">M-Pesa</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">MTN MoMo</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg">Airtel Money</span>
+            <span class="px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-rose-500">PayPal (Global)</span>
+        </div>
+    </section>
+
+    <script>
+        lucide.createIcons();
+        
+        function calculateYield() {
+            const days = parseInt(document.getElementById('calcDays').value) || 0;
+            const dailySteps = parseInt(document.getElementById('calcSteps').value) || 0;
+            
+            const totalSteps = days * dailySteps;
+            // 500 steps = 10 FITP
+            const earnedFitp = Math.floor(totalSteps / 500) * 10;
+            // 5000 FITP = $1
+            const valueUsd = earnedFitp / 5000;
+
+            document.getElementById('outSteps').innerText = totalSteps.toLocaleString();
+            document.getElementById('outFitp').innerText = earnedFitp.toLocaleString();
+            document.getElementById('outUsd').innerText = '$' + valueUsd.toFixed(2);
+        }
+
+        // Initialize calculation on load
+        window.onload = calculateYield;
+    </script>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all flex items-center justify-center">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+
+        // Dark/Light Theme Switcher Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.getElementById('body');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+        });
+    </script>
+</body>
+</html>
