@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account & Data Deletion Policy · FitPesa</title>
+    <meta name="description" content="FitPesa User Account and Data Deletion Request Portal and Data Retention Policy." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .light-mode { background-color: #ffffff !important; color: #111827 !important; }
+        .light-mode header, .light-mode aside, .light-mode footer { background-color: #f9fafb !important; border-color: #e5e7eb !important; }
+        .light-mode .bg-gray-800 { background-color: #f3f4f6 !important; border-color: #e5e7eb !important; }
+        .light-mode .text-gray-400 { color: #4b5563 !important; }
+        .light-mode .text-gray-500 { color: #6b7280 !important; }
+        .light-mode .text-white { color: #111827 !important; }
+        .light-mode .border-gray-800, .light-mode .border-gray-700 { border-color: #e5e7eb !important; }
+    </style>
+</head>
+<body id="body" class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white font-sans transition-colors duration-300">
+
+    <!-- COMPLIANCE TOP BAR -->
+    <aside class="border-b border-gray-800 bg-gray-900 text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-gray-400">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 text-gray-500">
+                <a href="legal.html#faq" class="hover:text-rose-500 transition-colors">FAQ</a>
+                <a href="legal.html#privacy" class="hover:text-rose-500 transition-colors">POPIA Privacy</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="index.html" class="text-2xl font-black tracking-tight flex items-center">
+                FiT<span class="text-rose-500">Pesa</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex gap-6 text-sm font-semibold">
+                <a href="step-to-earn.html" class="hover:text-rose-500 transition-colors">Step-to-Earn</a>
+                <a href="fitlovers.html" class="hover:text-rose-500 transition-colors">FitLovers</a>
+                <a href="pesabands.html" class="hover:text-rose-500 transition-colors">PesaBands</a>
+                <a href="pesacard.html" class="hover:text-rose-500 transition-colors">PesaCard</a>
+                <a href="pesamarket.html" class="hover:text-rose-500 transition-colors">PesaMarket</a>
+                <a href="about.html" class="hover:text-rose-500 transition-colors">About Us</a>
+                <a href="contact.html" class="hover:text-rose-500 transition-colors">Contact / Partner</a>
+            </nav>
+
+            <!-- Actions & Hamburger Button -->
+            <div class="flex items-center gap-3">
+                <button id="themeToggle" class="p-2.5 rounded-xl border border-gray-700 bg-gray-800 hover:border-rose-500 text-gray-300 hover:text-white transition-colors" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+                </button>
+
+                <!-- Hamburger Button (Mobile Only) -->
+                <button id="mobileMenuBtn" aria-label="Toggle Mobile Menu" class="lg:hidden p-2.5 rounded-xl border border-gray-700 bg-gray-800 text-gray-300 hover:text-white hover:border-rose-500 transition-colors">
+                    <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="closeIcon" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION MENU DROPDOWN -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-gray-900/95 border-b border-gray-800 px-4 pt-2 pb-6 space-y-3 font-semibold text-sm transition-all duration-300">
+            <a href="step-to-earn.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">Step-to-Earn</a>
+            <a href="fitlovers.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">FitLovers</a>
+            <a href="pesabands.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">PesaBands</a>
+            <a href="pesacard.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">PesaCard</a>
+            <a href="pesamarket.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">PesaMarket</a>
+            <a href="about.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">About Us</a>
+            <a href="contact.html" class="block py-2 text-gray-300 hover:text-rose-500 transition-colors">Contact / Partner</a>
+            <a href="deletion-policy.html" class="block py-2 text-rose-500 font-bold">Data Deletion</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="py-12 sm:py-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-500 text-xs font-bold uppercase tracking-widest">
+            <i data-lucide="shield-alert" class="w-4 h-4"></i> Data Privacy & Control
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black leading-tight">
+            Account & Data Deletion Request
+        </h1>
+        <p class="text-gray-400 text-sm max-w-2xl mx-auto leading-relaxed">
+            FitPesa is committed to protecting your privacy and complying with Google Play policies[cite: 11] and POPIA data rights[cite: 1, 2, 3]. You have full control to request account deletion and personal data removal at any time[cite: 11].
+        </p>
+    </section>
+
+    <!-- MAIN CONTENT BLOCK -->
+    <section class="pb-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+        
+        <!-- DELETION REQUEST FORM -->
+        <div class="bg-gray-800 rounded-3xl sm:rounded-[2.5rem] p-6 sm:p-10 border border-gray-700 shadow-2xl space-y-6">
+            <div class="border-b border-gray-700 pb-4">
+                <h2 class="text-xl sm:text-2xl font-bold flex items-center gap-2">
+                    <i data-lucide="user-x" class="w-6 h-6 text-rose-500"></i> Submit Online Deletion Request
+                </h2>
+                <p class="text-xs text-gray-400 mt-1">
+                    Fill out the form below to initiate complete removal of your FitPesa account (`com.fitpesa.mobile`) and related personal records[cite: 11].
+                </p>
+            </div>
+
+            <form id="deletion-form" onsubmit="handleDeletionSubmit(event)" class="space-y-5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-2">Full Name *</label>
+                        <input type="text" id="del-name" required placeholder="John Doe" class="w-full bg-gray-900 border border-gray-700 p-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-300 mb-2">FitPesa App Email / Mobile *</label>
+                        <input type="text" id="del-contact" required placeholder="user@example.com or +27..." class="w-full bg-gray-900 border border-gray-700 p-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-2">FitPesa Username (Optional)</label>
+                    <input type="text" id="del-username" placeholder="@username" class="w-full bg-gray-900 border border-gray-700 p-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-2">Scope of Request *</label>
+                    <select id="del-scope" required class="w-full bg-gray-900 border border-gray-700 p-3 rounded-xl text-sm focus:outline-none focus:border-rose-500">
+                        <option value="full">Complete Account & Data Deletion (Permanent)</option>
+                        <option value="fitness_only">Fitness & Step Activity Log Removal Only</option>
+                        <option value="marketing_only">Opt-out & Delete Marketing/Communication Records</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-gray-300 mb-2">Reason for Request (Optional)</label>
+                    <textarea id="del-reason" rows="3" placeholder="Let us know why you are leaving..." class="w-full bg-gray-900 border border-gray-700 p-3 rounded-xl text-sm focus:outline-none focus:border-rose-500"></textarea>
+                </div>
+
+                <div class="p-4 bg-rose-500/10 border border-rose-500/30 rounded-2xl flex items-start gap-3">
+                    <input type="checkbox" id="confirmCheck" required class="mt-1 w-5 h-5 accent-rose-500 rounded cursor-pointer shrink-0">
+                    <label for="confirmCheck" class="text-xs text-gray-300 cursor-pointer leading-relaxed">
+                        I understand that submitting this request will permanently erase my account profile, active FITP token balance, step history, and saved preferences[cite: 11]. This action cannot be reversed once processed[cite: 11].
+                    </label>
+                </div>
+
+                <button type="submit" class="w-full bg-rose-500 hover:bg-rose-600 text-white py-4 rounded-xl font-bold uppercase text-xs tracking-wider transition-colors">
+                    Request Account & Data Deletion
+                </button>
+
+                <div id="deletion-success" class="hidden p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 text-sm font-bold text-center rounded-xl">
+                    Deletion request submitted successfully. A confirmation email has been sent to your registered address.
+                </div>
+            </form>
+        </div>
+
+        <!-- ALTERNATIVE IN-APP METHOD & POLICY DETAILS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- In-App Instructions -->
+            <div class="bg-gray-800 p-6 sm:p-8 rounded-3xl border border-gray-700 space-y-4">
+                <div class="w-10 h-10 bg-rose-500/20 rounded-xl flex items-center justify-center">
+                    <i data-lucide="smartphone" class="w-5 h-5 text-rose-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">In-App Account Deletion</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    You can also trigger account deletion directly inside the FitPesa mobile application:
+                </p>
+                <ol class="list-decimal list-inside text-xs text-gray-300 space-y-2 font-medium">
+                    <li>Open the <strong>FitPesa App</strong> on your device.</li>
+                    <li>Go to <strong>Profile Settings</strong> $\rightarrow$ <strong>Privacy & Security</strong>.</li>
+                    <li>Tap <strong>Delete My Account</strong> and confirm your passcode/OTP.</li>
+                </ol>
+            </div>
+
+            <!-- Retention & Policy Summary -->
+            <div class="bg-gray-800 p-6 sm:p-8 rounded-3xl border border-gray-700 space-y-4">
+                <div class="w-10 h-10 bg-emerald-500/20 rounded-xl flex items-center justify-center">
+                    <i data-lucide="database-backup" class="w-5 h-5 text-emerald-500"></i>
+                </div>
+                <h3 class="text-xl font-bold">Data Handling & Retention</h3>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Upon account deletion:
+                </p>
+                <ul class="list-disc list-inside text-xs text-gray-300 space-y-2 font-medium">
+                    <li><strong>Deleted Immediately:</strong> Name, email, mobile number, step/location logs, and avatar profiles[cite: 11].</li>
+                    <li><strong>Retained Data:</strong> Anonymized transaction records required for tax, financial auditing, or fraud prevention compliance (held for up to 5 years as required by financial regulations)[cite: 11].</li>
+                </ul>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <div class="text-2xl font-black tracking-tight mb-2">
+                    FiT<span class="text-rose-500">Pesa</span>
+                </div>
+                <p class="text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa[cite: 1, 3].</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400">
+                <a href="about.html" class="hover:text-white transition-colors">About</a>
+                <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
+                <a href="legal.html" class="hover:text-white transition-colors">Legal & Privacy</a>
+                <a href="deletion-policy.html" class="text-rose-500 hover:text-white transition-colors">Data Deletion</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all flex items-center justify-center" title="Contact Us on WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        // Mobile Hamburger Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Dark / Light Theme Switcher
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.getElementById('body');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+        });
+
+        // Form submission handler
+        function handleDeletionSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('deletion-success');
+            
+            successBox.classList.remove('hidden');
+            document.getElementById('deletion-form').reset();
+
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
