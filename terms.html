@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terms of Service & Legal Governance · FitPesa</title>
+    <meta name="description" content="FitPesa Terms of Service, User Agreement, Non-Crypto Rewards Governance, and Platform Conditions." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            coral: '#FF416C',
+                            orange: '#FF4B2B',
+                            amber: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-main: #FAFAFC;
+            --bg-card: #FFFFFF;
+            --bg-surface: #F3F4F6;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --border-color: #E5E7EB;
+            --nav-glass: rgba(255, 255, 255, 0.88);
+        }
+
+        html.dark {
+            --bg-main: #0B0B10;
+            --bg-card: #14151F;
+            --bg-surface: #1C1E2D;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: #282A3E;
+            --nav-glass: rgba(14, 15, 21, 0.88);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-surface {
+            background-color: var(--bg-surface);
+        }
+
+        .gradient-brand {
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .glass-nav {
+            background: var(--nav-glass);
+            backdrop-filter: blur(16px);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0, 1, 0, 1), opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        .accordion-content.active {
+            max-height: 2000px;
+            opacity: 1;
+            transition: max-height 0.5s ease-in-out, opacity 0.4s ease-in;
+        }
+
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron-icon.rotate {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-coral selection:text-white">
+
+    <!-- COMPLIANCE TOP BAR -->
+    <aside class="theme-surface border-b border-[var(--border-color)] text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-[var(--text-muted)]">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 text-[var(--text-muted)]">
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Privacy & POPIA</a>
+                <a href="deletion-policy.html" class="hover:text-brand-coral transition-colors">Data Deletion Portal</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-[var(--border-color)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-2xl gradient-brand flex items-center justify-center p-1.5 shadow-lg shadow-brand-coral/25 shrink-0">
+                    <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="text-xl sm:text-2xl font-black tracking-tight leading-none">
+                        FiT<span class="text-brand-coral">Pesa</span>
+                    </div>
+                    <div class="text-[8px] font-black uppercase tracking-widest text-brand-orange mt-1">
+                        &bull; HEALTH. WEALTH. LOVE &bull;
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex gap-6 text-xs font-semibold">
+                <a href="index.html" class="hover:text-brand-coral transition-colors">Home</a>
+                <a href="fitlovers.html" class="hover:text-brand-coral transition-colors">Step-to-Earn</a>
+                <a href="market.html" class="hover:text-brand-coral transition-colors">PesaMarket & SNPL</a>
+                <a href="pay.html" class="hover:text-brand-coral transition-colors">PesaCard & Hardware</a>
+                <a href="about.html" class="hover:text-brand-coral transition-colors">About & Tokenomics</a>
+                <a href="support.html" class="hover:text-brand-coral transition-colors">Contact / Support</a>
+                <a href="terms.html" class="text-brand-coral font-bold underline">Terms of Service</a>
+            </nav>
+
+            <!-- Actions & Mobile Hamburger -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="themeToggle" class="p-2.5 rounded-xl theme-card text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+                </button>
+                
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" class="hidden sm:flex gradient-brand text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl items-center gap-1.5">
+                    <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i> Play Store
+                </a>
+
+                <!-- Hamburger Button (Mobile & Tablet) -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2.5 rounded-xl theme-card text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">
+                    <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="closeIcon" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION DROPDOWN MENU -->
+        <div id="mobileMenu" class="hidden lg:hidden theme-card border-b border-[var(--border-color)] px-4 pt-3 pb-6 space-y-3 font-semibold text-xs shadow-xl transition-all duration-300">
+            <a href="index.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Home</a>
+            <a href="fitlovers.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Step-to-Earn</a>
+            <a href="market.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">PesaMarket & SNPL</a>
+            <a href="pay.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">PesaCard & Hardware</a>
+            <a href="about.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">About & Tokenomics</a>
+            <a href="support.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Contact / Support</a>
+            <a href="privacy.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Privacy & POPIA</a>
+            <a href="terms.html" class="block py-2 text-brand-coral font-bold border-b border-[var(--border-color)]/50">Terms of Service</a>
+            <a href="deletion-policy.html" class="block py-2 text-brand-orange font-bold">Account & Data Deletion Portal</a>
+        </div>
+    </header>
+
+    <!-- HERO / TITLE -->
+    <section class="py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-coral/10 border border-brand-coral/30 text-brand-coral text-xs font-bold uppercase tracking-widest">
+            <i data-lucide="file-text" class="w-4 h-4"></i> Interactive Legal Governance
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black">Terms of Service</h1>
+        <p class="text-xs text-[var(--text-muted)]">Click on any section below to view detailed legal elaborations and compliance policies.</p>
+    </section>
+
+    <!-- MAIN INTERACTIVE TERMS CONTENT -->
+    <main class="pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4 text-xs leading-relaxed">
+
+        <!-- DISCLAIMER BOX -->
+        <div class="theme-card border-l-4 border-brand-orange p-6 rounded-2xl space-y-2 mb-6">
+            <h3 class="text-sm font-bold text-brand-orange flex items-center gap-2">
+                <i data-lucide="alert-triangle" class="w-4 h-4"></i> Important Mandatory Disclaimer
+            </h3>
+            <div class="text-[var(--text-muted)] space-y-1.5 leading-relaxed">
+                <p>FITPESA (PTY) LTD provides the FitPesa mobile application ("com.fitpesa.mobile") for fitness tracking, digital loyalty incentives, social interactions, and marketplace discovery.</p>
+                <p><strong>Use of the App is entirely at your own risk.</strong> FitPesa does not guarantee specific medical, financial, fitness, or dating outcomes.</p>
+                <p><strong>FITP points are in-app digital loyalty rewards</strong>, not cryptocurrency, fiat currency, bank deposits, or financial securities. Their conversion rates and issuance rules may be adjusted programmatically to preserve ecosystem sustainability.</p>
+            </div>
+        </div>
+
+        <!-- ACCORDION SECTIONS CONTAINER -->
+        <div class="space-y-4">
+
+            <!-- Section 1 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="building" class="w-5 h-5 shrink-0"></i> 1. Corporate Identity & Platform Governance
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        The FitPesa platform, mobile software package (<code class="bg-[var(--bg-surface)] px-1.5 py-0.5 rounded text-[11px]">com.fitpesa.mobile</code>), and associated cloud services are operated by <strong>FITPESA (PTY) LTD</strong>, a legally registered entity in the Republic of South Africa (RSA Reg: <strong>2026/207572/07</strong>), with regional corporate operations in Nigeria.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Elaborated Technical & Legal Scope:</strong>
+                        <p class="text-[var(--text-muted)] leading-relaxed">
+                            By interacting with our services, you enter into a binding contractual agreement with FITPESA (PTY) LTD. Avalanche Internet Solutions (Uganda) functions strictly as a technology delivery and software partner. This agreement applies globally to all users accessing our iOS, Android, and Web portals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="user-check" class="w-5 h-5 shrink-0"></i> 2. User Eligibility & Identity Verification
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        Access to FitPesa features, social discovery (FitLovers), and payment conversions is restricted to individuals who are <strong>18 years of age or older</strong>.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Detailed Compliance Policy:</strong>
+                        <p class="text-[var(--text-muted)] leading-relaxed">
+                            To comply with regional regulations, Apple App Store Guidelines, and Google Play Safety Directives, FitPesa reserves the right to request proof of age or identity (KYC) prior to approving payout transactions or granting access to dating/social messaging channels. Minors attempting to access adult features will face account deactivation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="shield" class="w-5 h-5 shrink-0"></i> 3. Account Security & Acceptable Conduct
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        Users must maintain accurate account credentials and are strictly prohibited from engaging in abusive, illegal, or fraudulent behavior.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Prohibited Conduct Framework:</strong>
+                        <ul class="list-disc ml-5 space-y-1 text-[var(--text-muted)]">
+                            <li>Creation of multiple accounts per user to farm referral bonuses or daily step rewards.</li>
+                            <li>Harassment, hate speech, bullying, or unauthorized commercial solicitation across community feeds.</li>
+                            <li>Attempting to bypass authentication security or reverse engineer FitPesa mobile APIs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="coins" class="w-5 h-5 shrink-0"></i> 4. Loyalty Reward System (FITP Non-Crypto Classification)
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        FITP tokens represent in-app utility reward points earned through step goals, daily check-ins, and marketplace participation.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Legal & Financial Token Classification:</strong>
+                        <p class="text-[var(--text-muted)] leading-relaxed">
+                            FITP points are non-volatile utility credits and <strong>do not constitute cryptocurrency, virtual asset investments, securities, or banking deposits</strong>. FITP points cannot be speculated upon outside the FitPesa app ecosystem. Conversion ratios, withdrawal thresholds (minimum 1,000 FITP), and daily cap limits are programmatically governed to ensure platform liquidity.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="shopping-bag" class="w-5 h-5 shrink-0"></i> 5. PesaMarket, SNPL & Payment Processors
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        PesaMarket connects users with merchant goods, digital vouchers, and Buy Now Pay Later (SNPL) hardware options.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Escrow & Third-Party Gateway Terms:</strong>
+                        <p class="text-[var(--text-muted)] leading-relaxed">
+                            FitPesa utilizes regulated mobile money partners (OPay, M-Pesa, Airtel Money) for local payout transfers. FitPesa acts as an intermediary escrow facilitator for peer-to-peer orders but is not liable for third-party courier delays, vendor warranty disputes, or mobile network gateway outages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <section class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="shield-alert" class="w-5 h-5 shrink-0"></i> 6. Anti-Fraud Enforcement, VPNs & GPS Spoofing
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        FitPesa enforces automated fraud protection protocols to preserve token ecosystem integrity.
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Zero-Tolerance Violations:</strong>
+                        <ul class="list-disc ml-5 space-y-1 text-[var(--text-muted)]">
+                            <li>Using VPNs, proxies, or IP masking tools to disguise geographical location.</li>
+                            <li>Utilizing GPS spoofing apps, Android emulators, or physical device shakers to falsify physical movement.</li>
+                            <li>Automated script attacks or exploiting application code vulnerabilities. Violators forfeit accrued balances permanently.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="trash-2" class="w-5 h-5 shrink-0"></i> 7. Privacy Rights, POPIA & Data Deletion
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        FitPesa guarantees full compliance with the South African Protection of Personal Information Act (POPIA), GDPR, and Google Play Data Safety policies[cite: 1].
+                    </p>
+                    <div class="theme-surface p-4 rounded-xl space-y-2 border border-[var(--border-color)]">
+                        <strong class="text-xs font-bold text-[var(--text-main)] block">Account Erasure Rights:</strong>
+                        <p class="text-[var(--text-muted)] leading-relaxed">
+                            Users maintain complete authority to request immediate account termination and telemetry erasure. You can trigger automated deletion inside app settings under <em>Profile &rarr; Privacy & Security</em> or access our web-based <a href="deletion-policy.html" class="text-brand-coral font-bold underline">Account & Data Deletion Portal</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 8 -->
+            <div class="theme-card rounded-2xl overflow-hidden transition-colors border border-[var(--border-color)]">
+                <button class="accordion-toggle w-full p-5 sm:p-6 text-left flex items-center justify-between hover:bg-[var(--bg-surface)] transition-colors focus:outline-none">
+                    <span class="text-sm sm:text-base font-bold text-brand-coral flex items-center gap-2.5">
+                        <i data-lucide="mail" class="w-5 h-5 shrink-0"></i> 8. Legal Notices & Direct Contact
+                    </span>
+                    <i data-lucide="chevron-down" class="chevron-icon w-5 h-5 text-[var(--text-muted)] shrink-0"></i>
+                </button>
+                <div class="accordion-content px-5 sm:px-6 pb-6 space-y-3 border-t border-[var(--border-color)]/50 pt-4">
+                    <p class="text-[var(--text-muted)] leading-relaxed">
+                        For formal legal notices, compliance queries, or regulatory inquiries, contact our legal team directly:
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                        <div class="theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-1">
+                            <strong class="text-xs block font-bold">Legal Department</strong>
+                            <a href="mailto:legal@fitpesa.org" class="text-brand-coral font-semibold hover:underline">legal@fitpesa.org</a>
+                        </div>
+                        <div class="theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-1">
+                            <strong class="text-xs block font-bold">General Support</strong>
+                            <a href="mailto:fitpesa@fitpesa.org" class="text-brand-coral font-semibold hover:underline">fitpesa@fitpesa.org</a>
+                        </div>
+                        <div class="theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-1 sm:col-span-2">
+                            <strong class="text-xs block font-bold">WhatsApp Legal & Support Line</strong>
+                            <a href="https://wa.me/27611858558?text=Hello%20FitPesa%20Legal" target="_blank" rel="noopener noreferrer" class="text-emerald-500 font-bold hover:underline flex items-center gap-1 mt-1">
+                                <i data-lucide="message-circle" class="w-4 h-4"></i> +27 61 185 8558
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="theme-surface border-t py-12 border-[var(--border-color)] text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-[var(--text-muted)] text-center sm:text-left">
+                &copy; 2026 FITPESA (PTY) LTD. All rights reserved. Registered in South Africa (2026/207572/07) & Nigeria.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-[var(--text-muted)]">
+                <a href="deletion-policy.html" class="hover:text-brand-coral transition-colors">Data Deletion Portal</a>
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-brand-coral transition-colors font-bold text-brand-coral">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PERSISTENT FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27611858558?text=Hello%20FitPesa%20Legal" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 sm:p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" title="Contact Us on WhatsApp (+27 61 185 8558)">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        // Dark / Light Theme Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            const htmlElement = document.documentElement;
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+            } else {
+                htmlElement.classList.add('dark');
+            }
+        });
+
+        // Mobile Hamburger Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Accordion Elaboration Handler
+        document.querySelectorAll('.accordion-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.chevron-icon');
+
+                // Toggle current section
+                content.classList.toggle('active');
+                icon.classList.toggle('rotate');
+            });
+        });
+    </script>
+</body>
+</html>
