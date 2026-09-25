@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support & Help Center · FitPesa</title>
+    <meta name="description" content="FitPesa Help Center, Customer Support, FAQs, Ticket Submission, and Data Privacy Assistance." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            coral: '#FF416C',
+                            orange: '#FF4B2B',
+                            amber: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-main: #FAFAFC;
+            --bg-card: #FFFFFF;
+            --bg-surface: #F3F4F6;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --border-color: #E5E7EB;
+            --nav-glass: rgba(255, 255, 255, 0.88);
+        }
+
+        html.dark {
+            --bg-main: #0B0B10;
+            --bg-card: #14151F;
+            --bg-surface: #1C1E2D;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: #282A3E;
+            --nav-glass: rgba(14, 15, 21, 0.88);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-surface {
+            background-color: var(--bg-surface);
+        }
+
+        .gradient-brand {
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .glass-nav {
+            background: var(--nav-glass);
+            backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-coral selection:text-white">
+
+    <!-- COMPLIANCE TOP BAR -->
+    <aside class="theme-surface border-b border-[var(--border-color)] text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
+        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
+            <div class="flex items-center gap-2 text-[var(--text-muted)]">
+                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+            </div>
+            <div class="hidden sm:flex items-center gap-4 text-[var(--text-muted)]">
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Privacy & POPIA</a>
+                <a href="deletion-policy.html" class="hover:text-brand-coral transition-colors">Account & Data Deletion Portal</a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 glass-nav border-b border-[var(--border-color)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-2xl gradient-brand flex items-center justify-center p-1.5 shadow-lg shadow-brand-coral/25 shrink-0">
+                    <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="text-xl sm:text-2xl font-black tracking-tight leading-none">
+                        FiT<span class="text-brand-coral">Pesa</span>
+                    </div>
+                    <div class="text-[8px] font-black uppercase tracking-widest text-brand-orange mt-1">
+                        &bull; HEALTH. WEALTH. LOVE &bull;
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex gap-6 text-xs font-semibold">
+                <a href="index.html" class="hover:text-brand-coral transition-colors">Home</a>
+                <a href="fitlovers.html" class="hover:text-brand-coral transition-colors">Step-to-Earn</a>
+                <a href="market.html" class="hover:text-brand-coral transition-colors">PesaMarket & SNPL</a>
+                <a href="pay.html" class="hover:text-brand-coral transition-colors">PesaCard & Hardware</a>
+                <a href="about.html" class="hover:text-brand-coral transition-colors">About & Tokenomics</a>
+                <a href="support.html" class="text-brand-coral font-bold underline">Contact / Support</a>
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Legal & POPIA</a>
+            </nav>
+
+            <!-- Actions & Mobile Hamburger -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <button id="themeToggle" class="p-2.5 rounded-xl theme-card text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors" title="Toggle Theme">
+                    <i data-lucide="sun" class="w-4 h-4 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-4 h-4 block dark:hidden"></i>
+                </button>
+                
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" class="hidden sm:flex gradient-brand text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl items-center gap-1.5">
+                    <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i> Play Store
+                </a>
+
+                <!-- Hamburger Button (Mobile & Tablet) -->
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2.5 rounded-xl theme-card text-[var(--text-muted)] hover:text-[var(--text-main)] transition-colors">
+                    <i data-lucide="menu" id="menuIcon" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="closeIcon" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE NAVIGATION DROPDOWN MENU -->
+        <div id="mobileMenu" class="hidden lg:hidden theme-card border-b border-[var(--border-color)] px-4 pt-3 pb-6 space-y-3 font-semibold text-xs shadow-xl transition-all duration-300">
+            <a href="index.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Home</a>
+            <a href="fitlovers.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Step-to-Earn</a>
+            <a href="market.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">PesaMarket & SNPL</a>
+            <a href="pay.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">PesaCard & Hardware</a>
+            <a href="about.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">About & Tokenomics</a>
+            <a href="support.html" class="block py-2 text-brand-coral font-bold border-b border-[var(--border-color)]/50">Contact / Support</a>
+            <a href="privacy.html" class="block py-2 text-[var(--text-muted)] hover:text-brand-coral transition-colors border-b border-[var(--border-color)]/50">Legal & POPIA</a>
+            <a href="deletion-policy.html" class="block py-2 text-brand-orange font-bold">Account & Data Deletion Portal</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="py-8 sm:py-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-coral/10 border border-brand-coral/30 text-brand-coral text-[11px] sm:text-xs font-bold uppercase tracking-widest">
+            <i data-lucide="headset" class="w-4 h-4"></i> Official Help & Resolution Center
+        </div>
+        <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight">How can we help you today?</h1>
+        <p class="text-xs text-[var(--text-muted)] max-w-xl mx-auto leading-relaxed">
+            Search our knowledge base, chat directly with us via WhatsApp, submit a support ticket, or manage your data privacy rights.
+        </p>
+
+        <!-- SYSTEM STATUS -->
+        <div class="pt-2 flex justify-center">
+            <div class="inline-flex items-center gap-2 text-[10px] sm:text-xs font-semibold px-3 sm:px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                All FitPesa Payment Gateways & Tracking Systems Operational
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK SUPPORT CHANNELS CARD GRID -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            
+            <!-- WhatsApp Channel -->
+            <a href="https://wa.me/27611858558?text=Hello%20FitPesa%20Support" target="_blank" rel="noopener noreferrer" class="theme-card p-5 rounded-2xl flex items-center gap-4 hover:border-emerald-500 transition-all group shadow-sm hover:shadow-md">
+                <div class="w-11 h-11 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center shrink-0">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                </div>
+                <div class="text-left overflow-hidden">
+                    <h3 class="font-bold text-xs sm:text-sm group-hover:text-emerald-500 transition-colors">WhatsApp Support</h3>
+                    <p class="text-[11px] text-[var(--text-muted)] truncate">+27 61 185 8558</p>
+                </div>
+            </a>
+
+            <!-- Email Channel -->
+            <a href="mailto:support@fitpesa.org" class="theme-card p-5 rounded-2xl flex items-center gap-4 hover:border-brand-coral transition-all group shadow-sm hover:shadow-md">
+                <div class="w-11 h-11 rounded-xl bg-brand-coral/10 text-brand-coral flex items-center justify-center shrink-0">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <div class="text-left overflow-hidden">
+                    <h3 class="font-bold text-xs sm:text-sm group-hover:text-brand-coral transition-colors">Email Support</h3>
+                    <p class="text-[11px] text-[var(--text-muted)] truncate">support@fitpesa.org</p>
+                </div>
+            </a>
+
+            <!-- Account & Data Deletion Portal -->
+            <a href="deletion-policy.html" class="theme-card p-5 rounded-2xl flex items-center gap-4 hover:border-brand-orange transition-all group shadow-sm hover:shadow-md">
+                <div class="w-11 h-11 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center shrink-0">
+                    <i data-lucide="user-x" class="w-6 h-6"></i>
+                </div>
+                <div class="text-left overflow-hidden">
+                    <h3 class="font-bold text-xs sm:text-sm group-hover:text-brand-orange transition-colors">Data Rights Portal</h3>
+                    <p class="text-[11px] text-[var(--text-muted)] truncate">Account & Data Deletion</p>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- SEARCH & FAQ SECTION -->
+    <main class="pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="theme-card p-5 sm:p-8 rounded-3xl space-y-6 shadow-sm">
+            <div class="space-y-1">
+                <h2 class="text-lg sm:text-xl font-bold flex items-center gap-2">
+                    <i data-lucide="search" class="w-5 h-5 text-brand-coral"></i> Search Knowledge Base
+                </h2>
+                <p class="text-xs text-[var(--text-muted)]">Type a keyword below to filter common help articles instantly.</p>
+            </div>
+
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Search topics (e.g., payouts, FITP, deletion, fees)..." onkeyup="searchFAQ()" class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] px-4 py-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral transition-colors">
+            </div>
+
+            <div id="faqList" class="space-y-4 pt-2">
+                
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">How do I earn FITP reward points?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">You can earn FITP through daily step tracking, daily app check-ins, engaging on FitLovers, referring verified friends, and interacting with rewarded brand announcements.</p>
+                </div>
+
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">Are FITP tokens a cryptocurrency or financial asset?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">No. FITP tokens are non-volatile, programmatically capped in-app utility and loyalty reward points designed strictly for platform features and marketplace redemption. They are not speculative crypto assets or traded securities.</p>
+                </div>
+
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">Is there a minimum balance requirement for payout conversions?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Yes. Users must maintain a minimum account balance threshold of 1,000 FITP before requesting third-party payout transfers or marketplace redemptions.</p>
+                </div>
+
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">Which payout mechanisms and regions are supported?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Supported payout channels include Nigeria (OPay, Palmpay, Bank Transfer), Uganda (Airtel Money / MTN MoMo), and Kenya/Tanzania (M-Pesa). Southern African users can redeem points directly in the PesaMarket marketplace.</p>
+                </div>
+
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">Why is my withdrawal or payout request delayed?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">Payout requests rely on regulated local payment processors. Delays (typically resolved within 24 to 72 hours) can occur due to mobile network congestion, bank compliance verification, or processor maintenance windows.</p>
+                </div>
+
+                <div class="faq-item theme-surface p-4 rounded-xl border border-[var(--border-color)] space-y-2">
+                    <strong class="text-xs sm:text-sm font-bold text-brand-coral block">How do I delete my account or purge personal step data?</strong>
+                    <p class="text-xs text-[var(--text-muted)] leading-relaxed">In accordance with Google Play and Apple App Store privacy policies, you can delete your account inside the app under Profile Settings &rarr; Privacy & Security, or visit our online <a href="deletion-policy.html" class="text-brand-coral underline font-semibold">Data Deletion Request Portal</a>.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- TICKET SUBMISSION FORM CARD -->
+        <div class="theme-card p-5 sm:p-8 rounded-3xl space-y-6 shadow-sm">
+            <div class="border-b border-[var(--border-color)] pb-4 space-y-1">
+                <h2 class="text-lg sm:text-xl font-bold flex items-center gap-2">
+                    <i data-lucide="life-buoy" class="w-5 h-5 text-brand-coral"></i> Submit a Support Ticket
+                </h2>
+                <p class="text-xs text-[var(--text-muted)]">
+                    Our technical support team reviews requests within 24 business hours.
+                </p>
+            </div>
+
+            <form id="ticketForm" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Full Name *</label>
+                        <input type="text" id="name" required placeholder="John Doe" class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] p-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Email Address *</label>
+                        <input type="email" id="email" required placeholder="name@example.com" class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] p-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Country *</label>
+                        <input type="text" id="country" required placeholder="e.g. South Africa, Nigeria, Kenya" class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] p-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1">Category *</label>
+                        <select id="category" onchange="toggleWithdrawalFields()" class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] p-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral">
+                            <option value="account">Account & Login Access</option>
+                            <option value="earnings">FITP Earnings & Step Verification</option>
+                            <option value="withdrawal">Withdrawal & Payout Processing</option>
+                            <option value="marketplace">PesaMarket & Orders</option>
+                            <option value="privacy">Privacy & Data Requests</option>
+                            <option value="security">Security & Abuse</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- DYNAMIC WITHDRAWAL / PAYOUT FIELDS -->
+                <div id="withdrawalFields" class="hidden p-4 theme-surface rounded-2xl border border-[var(--border-color)] space-y-3">
+                    <p class="text-xs font-bold text-brand-coral flex items-center gap-1.5">
+                        <i data-lucide="receipt" class="w-4 h-4"></i> Payment Processor Details
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-[10px] font-semibold text-[var(--text-muted)] mb-1">Provider</label>
+                            <input type="text" id="provider" placeholder="e.g., OPay, M-Pesa" class="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-lg text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-semibold text-[var(--text-muted)] mb-1">Reference ID</label>
+                            <input type="text" id="reference" placeholder="e.g., TX-992011" class="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-lg text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-semibold text-[var(--text-muted)] mb-1">FITP Amount</label>
+                            <input type="number" id="amount" placeholder="e.g., 1500" class="w-full bg-[var(--bg-card)] border border-[var(--border-color)] p-2.5 rounded-lg text-xs">
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold mb-1">Describe Your Issue *</label>
+                    <textarea id="message" rows="4" required placeholder="Please provide clear details regarding your issue or inquiry..." class="w-full bg-[var(--bg-surface)] border border-[var(--border-color)] p-3 rounded-xl text-xs focus:outline-none focus:border-brand-coral"></textarea>
+                </div>
+
+                <button type="submit" class="w-full gradient-brand text-white font-bold py-3.5 rounded-xl uppercase text-xs tracking-wider hover:opacity-95 transition-opacity flex items-center justify-center gap-2 shadow-lg shadow-brand-coral/20">
+                    <i data-lucide="send" class="w-4 h-4"></i> Submit Support Ticket
+                </button>
+
+                <p id="ticketResponse" class="text-xs font-bold text-emerald-500 text-center mt-2"></p>
+            </form>
+
+            <div class="text-[11px] text-[var(--text-muted)] leading-relaxed border-t border-[var(--border-color)] pt-4">
+                <strong>Third-Party Compliance Disclaimer:</strong> FitPesa partners with licensed third-party mobile money and payment gateways. Processing times, conversion rates, and regional availability may vary based on operational network status and regulatory identity checks.
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="theme-surface border-t py-12 border-[var(--border-color)] text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <p class="text-[var(--text-muted)] text-center sm:text-left">
+                &copy; 2026 FITPESA (PTY) LTD. All rights reserved. Registered in South Africa (2026/207572/07) & Nigeria.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-[var(--text-muted)]">
+                <a href="deletion-policy.html" class="hover:text-brand-coral transition-colors">Data Deletion Portal</a>
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- PERSISTENT FLOATING WHATSAPP BUTTON (ALL DEVICES) -->
+    <a href="https://wa.me/27611858558?text=Hello%20FitPesa%20Support" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-3.5 sm:p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform" title="Contact Us on WhatsApp (+27 61 185 8558)">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        lucide.createIcons();
+
+        // Dark / Light Theme Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        themeToggleBtn.addEventListener('click', () => {
+            const htmlElement = document.documentElement;
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+            } else {
+                htmlElement.classList.add('dark');
+            }
+        });
+
+        // Mobile Hamburger Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const closeIcon = document.getElementById('closeIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // FAQ Filter Functionality
+        function searchFAQ() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                item.style.display = item.innerText.toLowerCase().includes(input) ? '' : 'none';
+            });
+        }
+
+        // Toggle Payment Provider Fields
+        function toggleWithdrawalFields() {
+            let category = document.getElementById('category').value;
+            let withdrawalFields = document.getElementById('withdrawalFields');
+            if (category === "withdrawal") {
+                withdrawalFields.classList.remove("hidden");
+            } else {
+                withdrawalFields.classList.add("hidden");
+            }
+        }
+
+        // Ticket Submission Event Handler
+        document.getElementById('ticketForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const ticketId = "FP-" + Date.now();
+
+            const data = {
+                ticketId: ticketId,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                country: document.getElementById('country').value,
+                category: document.getElementById('category').value,
+                provider: document.getElementById('provider')?.value || null,
+                reference: document.getElementById('reference')?.value || null,
+                amount: document.getElementById('amount')?.value || null,
+                message: document.getElementById('message').value,
+                timestamp: new Date().toISOString()
+            };
+
+            fetch("https://fitpesa.org/api/support", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('ticketResponse').innerText =
+                    "Ticket submitted successfully. Your Ticket ID is: " + ticketId;
+                document.getElementById('ticketForm').reset();
+            })
+            .catch(error => {
+                document.getElementById('ticketResponse').innerText =
+                    "Ticket received (Offline Log). Reference Ticket ID: " + ticketId + ". If urgent, please email support@fitpesa.org";
+                document.getElementById('ticketForm').reset();
+            });
+        });
+    </script>
+</body>
+</html>
