@@ -4,155 +4,208 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PesaCard · Spend FITP Offline · FitPesa</title>
+    <meta name="description" content="Use your FITP balance offline via the PesaCard at kiosks, merchants, and supported pay points across Africa." />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .light-mode { background-color: #ffffff !important; color: #111827 !important; }
+        .light-mode header, .light-mode aside, .light-mode footer, .light-mode .mobile-menu { background-color: rgba(249,250,251,0.96) !important; border-color: #e5e7eb !important; }
+        .light-mode .bg-gray-800, .light-mode .bg-gray-900, .light-mode .bg-gray-700 { background-color: #f3f4f6 !important; border-color: #e5e7eb !important; }
+        .light-mode .text-gray-400, .light-mode .text-gray-500, .light-mode .text-gray-300 { color: #4b5563 !important; }
+        .light-mode .text-white { color: #111827 !important; }
+        .light-mode .border-gray-700, .light-mode .border-gray-800 { border-color: #e5e7eb !important; }
+    </style>
 </head>
-<body class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white font-sans">
-    </head>
-    <body class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white overflow-x-hidden">
+<body id="body" class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white overflow-x-hidden transition-colors duration-300 font-sans">
+    <aside class="border-b border-gray-800 bg-gray-900 text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-2 sm:justify-between">
+            <div class="flex items-center gap-2 text-gray-400">
+                <span class="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" aria-hidden="true"></span>
+                <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+            </div>
+            <div class="hidden items-center gap-4 text-gray-500 sm:flex">
+                <a href="legal.html#faq" class="transition-colors hover:text-rose-500">FAQ</a>
+                <a href="legal.html#privacy" class="transition-colors hover:text-rose-500">POPIA Privacy</a>
+            </div>
+        </div>
+    </aside>
 
-        <!-- COMPLIANCE TOP BAR -->
-        <aside class="border-b border-gray-800 bg-gray-900 text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
-            <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
-                <div class="flex items-center gap-2 text-gray-400">
-                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
-                </div>
-                <div class="hidden sm:flex items-center gap-4 text-gray-500">
-                    <a href="legal.html#faq" class="hover:text-rose-500 transition-colors">FAQ</a>
-                    <a href="legal.html#privacy" class="hover:text-rose-500 transition-colors">POPIA Privacy</a>
+    <header class="sticky top-0 z-50 border-b border-gray-800 bg-gray-900/90 backdrop-blur-md transition-colors">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-20 items-center justify-between gap-4">
+                <a href="index.html" class="shrink-0" aria-label="FitPesa home">
+                    <img src="logo.jpeg" alt="FitPesa" class="h-12 w-auto max-w-[170px] object-contain sm:h-14">
+                </a>
+
+                <nav id="desktopNav" class="hidden w-full flex-col gap-1 border-t border-gray-800 pt-4 text-sm font-semibold lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0" aria-label="Main navigation">
+                    <a href="step-to-earn.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Step-to-Earn</a>
+                    <a href="fitlovers.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">FitLovers</a>
+                    <a href="pesabands.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaBands</a>
+                    <a href="pesacard.html" class="rounded px-2 py-2 text-rose-500 transition-colors hover:text-rose-400">PesaCard</a>
+                    <a href="pesamarket.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaMarket</a>
+                    <a href="about.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">About Us</a>
+                    <a href="contact.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Partner/Contact Us</a>
+                    <a href="legal.html" class="rounded px-2 py-2 text-gray-400 transition-colors hover:text-white lg:hidden">Legal</a>
+                </nav>
+
+                <div class="flex shrink-0 items-center gap-2">
+                    <button id="themeToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white" aria-label="Switch to light mode" title="Toggle theme">
+                        <i data-lucide="sun" class="h-4 w-4"></i>
+                    </button>
+                    <a href="legal.html" class="mr-1 hidden text-xs font-bold text-gray-400 transition-colors hover:text-white lg:block">Legal</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="hidden items-center gap-2 rounded-xl bg-rose-500 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-rose-600 sm:inline-flex">
+                        <i data-lucide="download" class="h-4 w-4"></i> Get App
+                    </a>
+                    <button id="menuToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white lg:hidden" aria-label="Open navigation menu" aria-expanded="false">
+                        <i id="menuIcon" data-lucide="menu" class="h-5 w-5"></i>
+                    </button>
                 </div>
             </div>
-        </aside>
-
-    <!-- NAVIGATION -->
-    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-            <a href="index.html" class="text-2xl font-black tracking-tight flex items-center">
-                FiT<span class="text-rose-500">Pesa</span>
-            </a>
-            <nav class="hidden lg:flex gap-6 text-sm font-semibold">
-                
-                <a href="step-to-earn.html" class="hover:text-rose-500">Make Every Step Count</a>
-                <a href="fitlovers.html" class="text-rose-500 font-bold">FitLovers</a>
-                <a href="pesabands.html" class="hover:text-rose-500">PesaBands</a>
-                <a href="pesacard.html" class="text-rose-500">PesaCard</a>
-                <a href="pesamarket.html" class="hover:text-rose-500">PesaMarket</a>
-                <a href="about.html" class="hover:text-rose-500">About Us</a>
-                <a href="contact.html" class="hover:text-rose-500">Contact / Partner</a>
-            </nav>
         </div>
+
+        <nav id="mobileMenu" class="mobile-menu hidden border-t border-gray-800 bg-gray-900 px-4 pb-4 pt-3 lg:hidden" aria-label="Mobile navigation">
+            <div class="flex flex-col gap-1 text-sm font-semibold">
+                <a href="step-to-earn.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">Step-to-Earn</a>
+                <a href="fitlovers.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">FitLovers</a>
+                <a href="pesabands.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">PesaBands</a>
+                <a href="pesacard.html" class="rounded-lg px-3 py-3 text-rose-500">PesaCard</a>
+                <a href="pesamarket.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">PesaMarket</a>
+                <a href="about.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">About Us</a>
+                <a href="contact.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">Partner/Contact Us</a>
+                <div class="mt-2 flex gap-4 border-t border-gray-800 pt-2 px-3 text-xs text-gray-400">
+                    <a href="legal.html#faq" class="hover:text-rose-500">FAQ</a>
+                    <a href="legal.html#privacy" class="hover:text-rose-500">POPIA Privacy</a>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6 border-b border-gray-800">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-bold uppercase tracking-widest">
-            <i data-lucide="credit-card" class="w-4 h-4"></i> Offline Spending
+    <section class="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 lg:px-8 lg:py-24">
+        <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-xs font-bold uppercase tracking-widest text-emerald-500">
+            <i data-lucide="credit-card" class="h-4 w-4"></i> Offline Spending
         </div>
-        <h1 class="text-4xl sm:text-5xl font-black leading-tight max-w-3xl mx-auto">
+        <h1 class="mx-auto mt-6 max-w-3xl text-4xl font-black leading-tight sm:text-5xl">
             Take Your FITP Offline.
         </h1>
-        <p class="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
-            No phone? No smartwatch? No problem. The PesaCard allows you to spend, withdraw, and reload your FITP balance at local kiosks and supported merchants. Every user gets a free Virtual PesaCard, while Premium members unlock the sleek physical edition.
+        <p class="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-gray-400 sm:text-base">
+            No phone? No smartwatch? No problem. The PesaCard allows you to spend, withdraw, and reload your FITP balance at local kiosks and supported merchants. Every user gets a free virtual card and can upgrade to a premium physical card when they become active members.
         </p>
 
-        <div class="pt-6">
-            <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 text-gray-900 px-8 py-4 rounded-xl font-black uppercase text-sm hover:bg-emerald-400 transition-colors shadow-lg shadow-emerald-500/20">
-                <i data-lucide="smartphone-nfc" class="w-5 h-5"></i> Apply For Free Virtual PesaCard
+        <div class="mt-8">
+            <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-8 py-4 text-sm font-black uppercase tracking-wide text-gray-900 transition-colors hover:bg-emerald-400">
+                <i data-lucide="smartphone-nfc" class="h-5 w-5"></i> Apply For Free Virtual PesaCard
             </a>
         </div>
     </section>
 
-    <!-- ASSETS SHOWCASE -->
-    <section class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            
-            <!-- Asset 1: Physical Card Pride -->
+    <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 md:grid-cols-2">
             <div class="space-y-6">
-                <div class="relative w-full aspect-square rounded-[2.5rem] bg-gray-800 border-2 border-gray-700 overflow-hidden group">
-                    <img src="pesacard.jpeg" alt="PesaBand Model 1" class="w-full aspect-square object-cover rounded-2xl">
-
-                    <div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center z-10 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                        <i data-lucide="image" class="w-10 h-10 text-emerald-500 mb-4"></i>
-                        <p class="text-xs text-gray-300 font-mono leading-relaxed">
-                            FITPESA APP
-                        </p>
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-bold text-lg">
-                        
-                        
+                <div class="group relative aspect-square w-full overflow-hidden rounded-[2.5rem] border-2 border-gray-700 bg-gray-800">
+                    <img src="pesacard.jpeg" alt="PesaCard" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/70 p-8 text-center opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-sm">
+                        <i data-lucide="image" class="mb-4 h-10 w-10 text-emerald-500"></i>
+                        <p class="text-xs font-mono leading-relaxed text-gray-300">FITPESA APP</p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-black mb-2">Premium Physical Card</h3>
+                    <h3 class="mb-2 text-2xl font-black">Premium Physical Card</h3>
                     <p class="text-sm text-gray-400">Unlock the physical PesaCard through Premium membership. Tap to pay at local Spazas, supermarkets, and offline merchants seamlessly.</p>
                 </div>
             </div>
 
-            <!-- Asset 2: Kiosk Top-up -->
             <div class="space-y-6">
-                <div class="relative w-full aspect-square rounded-[2.5rem] bg-gray-800 border-2 border-gray-700 overflow-hidden group">
-                    <img src="kiosk.jpeg" alt="PesaBand Model 1" class="w-full aspect-square object-cover rounded-2xl">
-                    <div class="absolute inset-0 p-8 flex flex-col justify-center items-center text-center z-10 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-sm">
-                        <i data-lucide="store" class="w-10 h-10 text-rose-500 mb-4"></i>
-                        <p class="text-xs text-gray-300 font-mono leading-relaxed">
-                            FITPESA APP
-                        </p>
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center text-gray-600 font-bold text-lg">
-                        
+                <div class="group relative aspect-square w-full overflow-hidden rounded-[2.5rem] border-2 border-gray-700 bg-gray-800">
+                    <img src="kiosk.jpeg" alt="Kiosk top-up" class="h-full w-full object-cover">
+                    <div class="absolute inset-0 z-10 flex flex-col items-center justify-center bg-black/70 p-8 text-center opacity-0 transition-opacity group-hover:opacity-100 backdrop-blur-sm">
+                        <i data-lucide="store" class="mb-4 h-10 w-10 text-rose-500"></i>
+                        <p class="text-xs font-mono leading-relaxed text-gray-300">FITPESA APP</p>
                     </div>
                 </div>
                 <div>
-                    <h3 class="text-2xl font-black mb-2">Agent Reloads & Withdrawals</h3>
-                    <p class="text-sm text-gray-400">Low on FITP or need local currency? Visit any FitPesa branded POS agent or supported kiosk to top up your card or withdraw cash directly from your earned balance.</p>
+                    <h3 class="mb-2 text-2xl font-black">Agent Reloads & Withdrawals</h3>
+                    <p class="text-sm text-gray-400">Low on FITP or need local currency? Visit any FitPesa branded POS agent or supported kiosk to top up your card or withdraw cash directly from your wallet.</p>
                 </div>
             </div>
-
         </div>
-        <p class="text-center text-[10px] text-gray-500 uppercase mt-8 tracking-widest font-mono">Hover over image spaces to view production asset prompts.</p>
+        <p class="mt-8 text-center font-mono text-[10px] uppercase tracking-widest text-gray-500">Hover over image spaces to view production asset prompts.</p>
     </section>
 
-    <!-- QUICK SPECS -->
-    <section class="py-12 bg-gray-800 border-t border-gray-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    <section class="border-t border-gray-700 bg-gray-800 py-12">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 text-center sm:px-6 md:grid-cols-3 lg:px-8">
             <div class="p-6">
-                <i data-lucide="wifi-off" class="w-8 h-8 text-emerald-500 mx-auto mb-3"></i>
-                <h4 class="font-bold mb-1">True Offline Access</h4>
+                <i data-lucide="wifi-off" class="mx-auto mb-3 h-8 w-8 text-emerald-500"></i>
+                <h4 class="mb-1 font-bold">True Offline Access</h4>
                 <p class="text-xs text-gray-400">Transact using alternate NFC handshakes without requiring cellular data.</p>
             </div>
-            <div class="p-6 border-y md:border-y-0 md:border-x border-gray-700">
-                <i data-lucide="shield-check" class="w-8 h-8 text-emerald-500 mx-auto mb-3"></i>
-                <h4 class="font-bold mb-1">Secure & Encrypted</h4>
+            <div class="border-y border-gray-700 p-6 md:border-x md:border-y-0">
+                <i data-lucide="shield-check" class="mx-auto mb-3 h-8 w-8 text-emerald-500"></i>
+                <h4 class="mb-1 font-bold">Secure & Encrypted</h4>
                 <p class="text-xs text-gray-400">All balances are tied directly to your verified FitPesa account architecture.</p>
             </div>
             <div class="p-6">
-                <i data-lucide="refresh-cw" class="w-8 h-8 text-emerald-500 mx-auto mb-3"></i>
-                <h4 class="font-bold mb-1">Instant Top-Ups</h4>
+                <i data-lucide="refresh-cw" class="mx-auto mb-3 h-8 w-8 text-emerald-500"></i>
+                <h4 class="mb-1 font-bold">Instant Top-Ups</h4>
                 <p class="text-xs text-gray-400">Reload points or cash out via local POS agents and participating retail partners.</p>
             </div>
         </div>
     </section>
 
-    <script>
-        lucide.createIcons();
-    </script>
-    <!-- FLOATING WHATSAPP BUTTON -->
-    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 hover:scale-110 transition-all flex items-center justify-center">
-        <i data-lucide="message-circle" class="w-7 h-7"></i>
+    <footer class="border-t border-gray-800 bg-gray-900 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
+            <div class="text-center md:text-left">
+                <img src="logo.jpeg" alt="FitPesa" class="mx-auto mb-2 h-10 w-auto md:mx-0">
+                <p class="text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400">
+                <a href="about.html" class="transition-colors hover:text-white">About</a>
+                <a href="contact.html" class="transition-colors hover:text-white">Contact</a>
+                <a href="legal.html" class="transition-colors hover:text-white">Legal & Privacy</a>
+                <a href="deletion-policy.html" class="text-rose-500 transition-colors hover:text-white">Data Deletion</a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" aria-label="Contact FitPesa on WhatsApp" class="fixed bottom-6 right-6 z-50 rounded-full bg-emerald-500 p-4 text-white shadow-2xl transition-colors hover:bg-emerald-600">
+        <i data-lucide="message-circle" class="h-7 w-7"></i>
     </a>
 
     <script>
         lucide.createIcons();
 
-        // Dark/Light Theme Switcher Logic
-        const themeToggle = document.getElementById('themeToggle');
         const body = document.getElementById('body');
+        const themeToggle = document.getElementById('themeToggle');
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuIcon = document.getElementById('menuIcon');
+        const savedTheme = localStorage.getItem('fitpesa-theme');
 
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-        });
+        function setTheme(theme) {
+            const isLight = theme === 'light';
+            body.classList.toggle('light-mode', isLight);
+            document.documentElement.dataset.theme = theme;
+            themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
+            themeToggle.innerHTML = isLight ? '<i data-lucide="moon" class="h-4 w-4"></i>' : '<i data-lucide="sun" class="h-4 w-4"></i>';
+            localStorage.setItem('fitpesa-theme', theme);
+            lucide.createIcons();
+        }
+
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+            menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu');
+            lucide.createIcons();
+        }
+
+        themeToggle.addEventListener('click', () => setTheme(body.classList.contains('light-mode') ? 'dark' : 'light'));
+        menuToggle.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+        setTheme(savedTheme || 'dark');
     </script>
-    
 </body>
 </html>
