@@ -5,168 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Learn about FitPesa's vision, mission and leadership team." />
     <title>About Us · Vision & Leadership · FitPesa</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <style>
-        body { transition: background-color .2s ease, color .2s ease; }
-        body.light-mode { background-color: #f8fafc; color: #111827; }
-        body.light-mode .theme-surface { background-color: #ffffff; border-color: #e5e7eb; }
-        body.light-mode .theme-header,
-        body.light-mode .theme-footer,
-        body.light-mode .theme-topbar { background-color: rgba(248, 250, 252, .95); border-color: #e5e7eb; }
-        body.light-mode .theme-muted { color: #4b5563; }
-        body.light-mode .theme-subtle { color: #6b7280; }
-        body.light-mode .theme-heading { color: #111827; }
-        body.light-mode .theme-icon { background-color: #f3f4f6; }
-        body.light-mode .mobile-menu { background-color: #ffffff; border-color: #e5e7eb; }
+        body { font-family: 'Inter', sans-serif; }
+        .light-mode { background-color: #fff !important; color: #111827 !important; }
+        .light-mode header,
+        .light-mode aside,
+        .light-mode footer { background-color: #f9fafb !important; border-color: #e5e7eb !important; }
+        .light-mode .bg-gray-800 { background-color: #f3f4f6 !important; border-color: #e5e7eb !important; }
+        .light-mode .bg-gray-900 { background-color: #fff !important; }
+        .light-mode .text-gray-300,
+        .light-mode .text-gray-400 { color: #4b5563 !important; }
+        .light-mode .text-gray-500 { color: #6b7280 !important; }
+        .light-mode .text-white { color: #111827 !important; }
+        .light-mode .border-gray-700,
+        .light-mode .border-gray-800 { border-color: #e5e7eb !important; }
+        .light-mode .mobile-menu { background-color: #fff !important; }
     </style>
 </head>
-<body id="page" class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white font-sans">
-    <!-- COMPLIANCE TOP BAR -->
-    <aside class="theme-topbar border-b border-gray-800 bg-gray-900 text-[10px] sm:text-xs py-2 px-4 font-medium text-center sm:text-left">
-        <div class="max-w-7xl mx-auto flex flex-wrap justify-center sm:justify-between items-center gap-2">
-            <div class="flex items-center gap-2 text-gray-400 theme-muted">
-                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<body id="body" class="min-h-screen overflow-x-hidden bg-gray-900 text-white selection:bg-rose-500 selection:text-white transition-colors duration-300">
+    <aside class="border-b border-gray-800 bg-gray-900 px-4 py-2 text-center text-[10px] font-medium sm:text-xs sm:text-left">
+        <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-2 sm:justify-between">
+            <div class="flex items-center gap-2 text-gray-400">
+                <span class="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" aria-hidden="true"></span>
                 <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
             </div>
-            <div class="hidden sm:flex items-center gap-4 text-gray-500 theme-subtle">
-                <a href="legal.html#faq" class="hover:text-rose-500 transition-colors">FAQ</a>
-                <a href="legal.html#privacy" class="hover:text-rose-500 transition-colors">POPIA Privacy</a>
+            <div class="hidden items-center gap-4 text-gray-500 sm:flex">
+                <a href="legal.html#faq" class="transition-colors hover:text-rose-500">FAQ</a>
+                <a href="legal.html#privacy" class="transition-colors hover:text-rose-500">POPIA Privacy</a>
             </div>
         </div>
     </aside>
 
-    <!-- NAVIGATION -->
-    <header class="theme-header sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-            <a href="index.html" class="text-2xl font-black tracking-tight flex items-center" aria-label="FitPesa home">
-                FiT<span class="text-rose-500">Pesa</span>
-            </a>
+    <header class="sticky top-0 z-50 border-b border-gray-800 bg-gray-900/90 backdrop-blur-md transition-colors">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex min-h-20 items-center justify-between gap-4 py-3">
+                <a href="index.html" class="shrink-0" aria-label="FitPesa home">
+                    <img src="logo.jpeg" alt="FitPesa" class="h-12 w-auto max-w-[170px] object-contain sm:h-14" />
+                </a>
 
-            <div class="flex items-center gap-2">
-                <nav id="desktop-nav" class="hidden lg:flex gap-6 text-sm font-semibold" aria-label="Primary navigation">
-                    <a href="step-to-earn.html" class="hover:text-rose-500">Make Every Step Count</a>
-                    <a href="fitlovers.html" class="hover:text-rose-500">FitLovers</a>
-                    <a href="pesabands.html" class="hover:text-rose-500">PesaBands</a>
-                    <a href="pesacard.html" class="hover:text-rose-500">PesaCard</a>
-                    <a href="pesamarket.html" class="hover:text-rose-500">PesaMarket</a>
-                    <a href="about.html" class="text-rose-500 font-bold" aria-current="page">About Us</a>
-                    <a href="contact.html" class="hover:text-rose-500">Contact / Partner</a>
+                <nav id="mainNav" class="mobile-menu hidden w-full flex-col gap-1 border-t border-gray-800 pt-4 text-sm font-semibold lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0" aria-label="Primary navigation">
+                    <a href="step-to-earn.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Step-to-Earn</a>
+                    <a href="fitlovers.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">FitLovers</a>
+                    <a href="pesabands.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaBands</a>
+                    <a href="pesacard.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaCard</a>
+                    <a href="pesamarket.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaMarket</a>
+                    <a href="about.html" class="rounded px-2 py-2 text-rose-500 transition-colors hover:text-rose-400" aria-current="page">About Us</a>
+                    <a href="contact.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Partner/Contact Us</a>
+                    <a href="legal.html" class="rounded px-2 py-2 text-gray-400 transition-colors hover:text-white lg:hidden">Legal</a>
                 </nav>
 
-                <button id="themeToggle" type="button" class="p-2 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-rose-500" aria-label="Switch to light mode" title="Toggle colour theme">
-                    <i id="themeIcon" data-lucide="sun" class="w-5 h-5"></i>
-                </button>
-                <button id="menuToggle" type="button" class="lg:hidden p-2 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-rose-500" aria-controls="mobile-menu" aria-expanded="false" aria-label="Open navigation menu">
-                    <i id="menuIcon" data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-
-        <nav id="mobile-menu" class="mobile-menu hidden lg:hidden border-t border-gray-800 bg-gray-900 px-4 pb-4" aria-label="Mobile navigation">
-            <div class="flex flex-col gap-1 pt-3 text-sm font-semibold">
-                <a href="step-to-earn.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">Make Every Step Count</a>
-                <a href="fitlovers.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">FitLovers</a>
-                <a href="pesabands.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">PesaBands</a>
-                <a href="pesacard.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">PesaCard</a>
-                <a href="pesamarket.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">PesaMarket</a>
-                <a href="about.html" class="rounded-lg px-3 py-3 text-rose-500" aria-current="page">About Us</a>
-                <a href="contact.html" class="rounded-lg px-3 py-3 hover:bg-gray-800 hover:text-rose-500">Contact / Partner</a>
-                <div class="mt-2 border-t border-gray-800 pt-2 flex gap-4 px-3 text-xs text-gray-400">
-                    <a href="legal.html#faq" class="hover:text-rose-500">FAQ</a>
-                    <a href="legal.html#privacy" class="hover:text-rose-500">POPIA Privacy</a>
+                <div class="flex shrink-0 items-center gap-2">
+                    <button id="themeToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white" aria-label="Switch to light mode">
+                        <i data-lucide="sun" class="h-4 w-4"></i>
+                    </button>
+                    <a href="legal.html" class="mr-1 hidden text-xs font-bold text-gray-400 transition-colors hover:text-white lg:block">Legal</a>
+                    <button id="menuToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white lg:hidden" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation menu">
+                        <i data-lucide="menu" class="h-5 w-5"></i>
+                    </button>
                 </div>
             </div>
-        </nav>
+        </div>
     </header>
 
-    <!-- VISION & MISSION -->
-    <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-gray-800">
-        <div class="text-center mb-16">
-            <span class="text-xs font-bold uppercase text-rose-500 tracking-widest">Our Purpose</span>
-            <h1 class="theme-heading text-4xl sm:text-5xl font-black mt-2">Building A Global Walking Economy</h1>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="theme-surface bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-rose-500 transition-colors">
-                <div class="theme-icon w-12 h-12 bg-rose-500/20 rounded-xl flex items-center justify-center mb-6"><i data-lucide="eye" class="w-6 h-6 text-rose-500"></i></div>
-                <h2 class="theme-heading text-2xl font-black mb-4">Our Vision</h2>
-                <p class="theme-muted text-sm text-gray-400 leading-relaxed">To make FITP an everyday, valuable programmable loyalty point across the African continent. We envision a future where your daily physical movement can offset essential living costs and unlock meaningful opportunities.</p>
-            </div>
-            <div class="theme-surface bg-gray-800 p-8 rounded-3xl border border-gray-700 hover:border-emerald-500 transition-colors">
-                <div class="theme-icon w-12 h-12 bg-emerald-500/20 rounded-xl flex items-center justify-center mb-6"><i data-lucide="target" class="w-6 h-6 text-emerald-500"></i></div>
-                <h2 class="theme-heading text-2xl font-black mb-4">Our Mission</h2>
-                <p class="theme-muted text-sm text-gray-400 leading-relaxed">As a social impact enterprise, FitPesa is dedicated to providing financial inclusion and opportunities to everyone, at any stage of their adult life. We aim to reward movement, connect communities and strengthen local economies.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- SOCIAL IMPACT & TOKENOMICS -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="theme-surface bg-gray-800 rounded-[2.5rem] p-8 sm:p-12 border border-gray-700">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div class="space-y-6">
-                    <h2 class="theme-heading text-3xl font-black">Empowering the Hyperlocal Ecosystem</h2>
-                    <p class="theme-muted text-sm text-gray-300 leading-relaxed">Through our peer-to-peer PesaMarket and dropshipping infrastructure, we give users access to a customer base that traditional e-commerce costs would normally prohibit.</p>
-                    <p class="theme-muted text-sm text-gray-300 leading-relaxed">The Stock Now Pay Later (SNPL) initiative uses existing Spaza businesses as a crowd-sourced methodology to distribute goods, empowering local vendors. We are maximizing our reach while keeping value within local communities.</p>
+    <main>
+        <section class="border-b border-gray-800 px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-16 text-center">
+                    <span class="text-xs font-bold uppercase tracking-widest text-rose-500">Our Purpose</span>
+                    <h1 class="mt-2 text-4xl font-black sm:text-5xl">Building A Global Walking Economy</h1>
                 </div>
-                <div class="theme-surface bg-gray-900 border border-gray-700 p-6 rounded-3xl text-center">
-                    <h3 class="text-xs font-bold uppercase text-gray-400 mb-2">Maximum Points Supply</h3>
-                    <div class="text-4xl font-black text-rose-500 font-mono mb-4">80,000,000,000</div>
-                    <p class="theme-subtle text-xs text-gray-500">The FITP ecosystem is strictly capped at 80 billion programmable loyalty points to ensure long-term sustainability across the continent.</p>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-8 transition-colors hover:border-rose-500">
+                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-rose-500/20"><i data-lucide="eye" class="h-6 w-6 text-rose-500"></i></div>
+                        <h2 class="mb-4 text-2xl font-black">Our Vision</h2>
+                        <p class="text-sm leading-relaxed text-gray-400">To make FITP an everyday, valuable programmable loyalty point across the African continent. We envision a future where your daily physical movement can offset essential living costs and create meaningful economic opportunity.</p>
+                    </article>
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-8 transition-colors hover:border-emerald-500">
+                        <div class="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/20"><i data-lucide="target" class="h-6 w-6 text-emerald-500"></i></div>
+                        <h2 class="mb-4 text-2xl font-black">Our Mission</h2>
+                        <p class="text-sm leading-relaxed text-gray-400">As a social impact enterprise, FitPesa is dedicated to providing financial inclusion and opportunities to everyone, at any stage of their adult life. We reward movement, connect local communities and make everyday essentials more accessible.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- EXECUTIVE TEAM -->
-    <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-gray-800">
-        <div class="text-center mb-12"><h2 class="theme-heading text-3xl font-black">Executive Leadership</h2><p class="theme-subtle text-xs text-gray-400 mt-2">Connect with our team directly via in-app chat.</p></div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="theme-surface bg-gray-800 p-6 rounded-3xl border border-gray-700 text-center hover:border-rose-500 transition-colors"><img src="founder.jpeg" alt="Balogun Ademola Omotolani" class="w-20 h-20 mx-auto object-cover rounded-2xl border border-gray-700 mb-4"><h3 class="text-base font-bold">Balogun Ademola Omotolani</h3><div class="text-xs font-bold text-rose-500 mt-1 mb-3">Founder</div><span class="text-xs text-gray-400">@Mr.Caezr</span></div>
-            <div class="theme-surface bg-gray-800 p-6 rounded-3xl border border-gray-700 text-center hover:border-amber-500 transition-colors"><img src="team-ceo.jpg" alt="Balogun Olanrewaju" class="w-20 h-20 mx-auto object-cover rounded-2xl border border-gray-700 mb-4"><h3 class="text-base font-bold">Balogun Olanrewaju</h3><div class="text-xs font-bold text-amber-500 mt-1 mb-3">Chief Executive Officer</div><span class="text-xs text-gray-400">@TopmanBalogun</span></div>
-            <div class="theme-surface bg-gray-800 p-6 rounded-3xl border border-gray-700 text-center hover:border-blue-500 transition-colors"><div class="w-20 h-20 mx-auto bg-gray-900 rounded-2xl border border-gray-700 flex items-center justify-center mb-4"><i data-lucide="user" class="w-8 h-8 text-gray-600"></i></div><h3 class="text-base font-bold">Jonathan Aissu</h3><div class="text-xs font-bold text-blue-500 mt-1 mb-3">Head of Development</div><span class="text-xs text-gray-400">@Jonathan</span></div>
-            <div class="theme-surface bg-gray-800 p-6 rounded-3xl border border-gray-700 text-center hover:border-emerald-500 transition-colors"><div class="w-20 h-20 mx-auto bg-gray-900 rounded-2xl border border-gray-700 flex items-center justify-center mb-4"><i data-lucide="user" class="w-8 h-8 text-gray-600"></i></div><h3 class="text-base font-bold">Brilliant Mphaphuli</h3><div class="text-xs font-bold text-emerald-500 mt-1 mb-3">Communications Officer</div><span class="text-xs text-gray-400">@brilly</span></div>
-        </div>
-    </section>
+        <section class="px-4 py-16 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl rounded-[2.5rem] border border-gray-700 bg-gray-800 p-8 sm:p-12">
+                <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+                    <div class="space-y-6">
+                        <h2 class="text-3xl font-black">Empowering the Hyperlocal Ecosystem</h2>
+                        <p class="text-sm leading-relaxed text-gray-300">Through our peer-to-peer PesaMarket and dropshipping infrastructure, we give users access to a customer base that traditional e-commerce costs would normally prohibit.</p>
+                        <p class="text-sm leading-relaxed text-gray-300">The Stock Now Pay Later (SNPL) initiative uses existing Spaza businesses as a crowd-sourced methodology to distribute goods, empowering local vendors and strengthening the communities they serve.</p>
+                    </div>
+                    <div class="rounded-3xl border border-gray-700 bg-gray-900 p-6 text-center">
+                        <h3 class="mb-2 text-xs font-bold uppercase text-gray-400">Maximum Points Supply</h3>
+                        <div class="mb-4 font-mono text-4xl font-black text-rose-500">80,000,000,000</div>
+                        <p class="text-xs text-gray-500">The FITP ecosystem is strictly capped at 80 billion programmable loyalty points to ensure long-term sustainability across the continent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="theme-footer bg-gray-900 border-t border-gray-800 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6"><div class="text-center md:text-left"><div class="text-2xl font-black tracking-tight mb-2">FiT<span class="text-rose-500">Pesa</span></div><p class="theme-subtle text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa.</p></div><div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400"><a href="contact.html" class="hover:text-white transition-colors">Contact</a><a href="legal.html" class="hover:text-white transition-colors">Legal & Privacy</a><a href="deletion-policy.html" class="text-rose-500 hover:text-white transition-colors">Data Deletion</a></div></div>
+        <section class="border-t border-gray-800 px-4 py-16 sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-12 text-center"><h2 class="text-3xl font-black">Executive Leadership</h2><p class="mt-2 text-xs text-gray-400">Connect with our team directly via in-app chat.</p></div>
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-6 text-center transition-colors hover:border-rose-500"><img src="founder.jpeg" alt="Balogun Ademola Omotolani" class="mx-auto mb-4 h-20 w-20 rounded-2xl object-cover" /><h3 class="text-base font-bold">Balogun Ademola Omotolani</h3><p class="mb-3 mt-1 text-xs font-bold text-rose-500">Founder</p><span class="text-xs text-gray-400">@Mr.Caezr</span></article>
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-6 text-center transition-colors hover:border-amber-500"><div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gray-900"><i data-lucide="user" class="h-8 w-8 text-gray-600"></i></div><h3 class="text-base font-bold">Balogun Olanrewaju</h3><p class="mb-3 mt-1 text-xs font-bold text-amber-500">Chief Executive Officer</p><span class="text-xs text-gray-400">@TopmanBalogun</span></article>
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-6 text-center transition-colors hover:border-blue-500"><div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gray-900"><i data-lucide="user" class="h-8 w-8 text-gray-600"></i></div><h3 class="text-base font-bold">Jonathan Aissu</h3><p class="mb-3 mt-1 text-xs font-bold text-blue-500">Head of Development</p><span class="text-xs text-gray-400">@Jonathan</span></article>
+                    <article class="rounded-3xl border border-gray-700 bg-gray-800 p-6 text-center transition-colors hover:border-emerald-500"><div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-2xl bg-gray-900"><i data-lucide="user" class="h-8 w-8 text-gray-600"></i></div><h3 class="text-base font-bold">Brilliant Mphaphuli</h3><p class="mb-3 mt-1 text-xs font-bold text-emerald-500">Communications Officer</p><span class="text-xs text-gray-400">@brilly</span></article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-gray-900 py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
+            <div class="text-center md:text-left"><img src="logo.jpeg" alt="FitPesa" class="mx-auto mb-2 h-10 w-auto md:mx-0" /><p class="text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa.</p></div>
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400"><a href="contact.html" class="transition-colors hover:text-white">Contact</a><a href="legal.html" class="transition-colors hover:text-white">Legal</a></div>
+        </div>
     </footer>
 
-    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" aria-label="Chat with FitPesa on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-500 text-white p-4 rounded-full shadow-2xl hover:bg-emerald-600 transition-colors"><i data-lucide="message-circle" class="w-7 h-7"></i></a>
+    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" aria-label="Contact FitPesa on WhatsApp" class="fixed bottom-6 right-6 z-50 rounded-full bg-emerald-500 p-4 text-white shadow-2xl transition-colors hover:bg-emerald-600"><i data-lucide="message-circle" class="h-7 w-7"></i></a>
 
     <script>
-        const page = document.getElementById('page');
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        const menuToggle = document.getElementById('menuToggle');
-        const menu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menuIcon');
-        const savedTheme = localStorage.getItem('fitpesa-theme');
-
-        function setTheme(theme) {
-            const isLight = theme === 'light';
-            page.classList.toggle('light-mode', isLight);
-            document.documentElement.dataset.theme = theme;
-            themeIcon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
-            themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-            localStorage.setItem('fitpesa-theme', theme);
-            lucide.createIcons();
-        }
-
-        function setMenu(open) {
-            menu.classList.toggle('hidden', !open);
-            menuToggle.setAttribute('aria-expanded', String(open));
-            menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
-            menuIcon.setAttribute('data-lucide', open ? 'x' : 'menu');
-            lucide.createIcons();
-        }
-
-        themeToggle.addEventListener('click', () => setTheme(page.classList.contains('light-mode') ? 'dark' : 'light'));
-        menuToggle.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
-        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
-        setTheme(savedTheme || 'dark');
         lucide.createIcons();
+
+        const body = document.getElementById('body');
+        const themeToggle = document.getElementById('themeToggle');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        themeToggle.addEventListener('click', () => {
+            const lightMode = body.classList.toggle('light-mode');
+            themeToggle.setAttribute('aria-label', lightMode ? 'Switch to dark mode' : 'Switch to light mode');
+        });
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', String(!isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+            mainNav.classList.toggle('hidden', isOpen);
+            mainNav.classList.toggle('flex', !isOpen);
+            menuToggle.querySelector('[data-lucide]').setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+            mainNav.classList.add('hidden');
+            mainNav.classList.remove('flex');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            menuToggle.setAttribute('aria-label', 'Open navigation menu');
+        }));
     </script>
 </body>
 </html>
