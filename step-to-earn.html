@@ -3,71 +3,71 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Turn your daily steps into FITP loyalty points with FitPesa." />
     <title>Make Every Step Count · FitPesa</title>
+    <meta name="description" content="Estimate how your daily steps convert into FITP rewards and local cash value with FitPesa." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        :root {
-            color-scheme: dark;
-        }
-
         body {
-            background-color: #111827;
-            color: #f9fafb;
+            font-family: 'Inter', sans-serif;
+            transition: background-color .25s ease, color .25s ease;
         }
-
-        body.light-mode {
-            color-scheme: light;
-            background-color: #f9fafb;
-            color: #111827;
+        .light-mode {
+            background-color: #f8fafc !important;
+            color: #111827 !important;
         }
-
-        body.light-mode .bg-gray-900,
-        body.light-mode .bg-gray-900\/90 {
-            background-color: #f9fafb;
+        .light-mode header,
+        .light-mode aside,
+        .light-mode footer,
+        .light-mode .mobile-menu {
+            background-color: rgba(248, 250, 252, 0.96) !important;
+            border-color: #e5e7eb !important;
         }
-
-        body.light-mode .bg-gray-800 {
-            background-color: #f3f4f6;
+        .light-mode .bg-gray-900,
+        .light-mode .bg-gray-800,
+        .light-mode .bg-gray-700 {
+            background-color: #ffffff !important;
+            border-color: #e5e7eb !important;
         }
-
-        body.light-mode .bg-black {
-            background-color: #e5e7eb;
+        .light-mode .text-white,
+        .light-mode .text-gray-200,
+        .light-mode .text-gray-300,
+        .light-mode .theme-heading {
+            color: #111827 !important;
         }
-
-        body.light-mode .border-gray-800,
-        body.light-mode .border-gray-700 {
-            border-color: #d1d5db;
+        .light-mode .text-gray-400,
+        .light-mode .text-gray-500,
+        .light-mode .text-gray-600 {
+            color: #4b5563 !important;
         }
-
-        body.light-mode .text-white {
-            color: #111827;
+        .light-mode .border-gray-700,
+        .light-mode .border-gray-800,
+        .light-mode .border-gray-900 {
+            border-color: #e5e7eb !important;
         }
-
-        body.light-mode .text-gray-400,
-        body.light-mode .text-gray-500 {
-            color: #4b5563;
+        .light-mode input,
+        .light-mode select,
+        .light-mode textarea {
+            background-color: #f9fafb !important;
+            color: #111827 !important;
+            border-color: #e5e7eb !important;
         }
-
-        body.light-mode .hover\:text-white:hover {
-            color: #111827;
+        .light-mode .text-rose-500 {
+            color: #e11d48 !important;
         }
-
-        body.light-mode input {
-            color: #111827;
+        .light-mode .text-emerald-500 {
+            color: #059669 !important;
         }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                scroll-behavior: auto !important;
-                transition-duration: 0.01ms !important;
-                animation-duration: 0.01ms !important;
-            }
+        .light-mode .text-gray-400 {
+            color: #475569 !important;
+        }
+        .light-mode .bg-rose-500\/10,
+        .light-mode .bg-gray-800 {
+            background-color: #f3f4f6 !important;
         }
     </style>
 </head>
-<body id="body" class="min-h-screen overflow-x-hidden bg-gray-900 font-sans text-white selection:bg-rose-500 selection:text-white transition-colors duration-300">
+<body id="body" class="bg-gray-900 text-white selection:bg-rose-500 selection:text-white overflow-x-hidden transition-colors duration-300">
     <!-- COMPLIANCE TOP BAR -->
     <aside class="border-b border-gray-800 bg-gray-900 px-4 py-2 text-center text-[10px] font-medium sm:text-xs sm:text-left">
         <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-2 sm:justify-between">
@@ -93,38 +93,63 @@
 
                 <nav id="mainNav" class="hidden w-full flex-col gap-1 border-t border-gray-800 pt-4 text-sm font-semibold lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0" aria-label="Main navigation">
                     <a href="fitlovers.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">FitLovers</a>
-                    <a href="step-to-earn.html" class="rounded px-2 py-2 text-rose-500 transition-colors hover:text-rose-400" aria-current="page">Make Every Step Count</a>
+                    <a href="step-to-earn.html" class="rounded px-2 py-2 text-rose-500 transition-colors hover:text-rose-400">Make Every Step Count</a>
                     <a href="pesabands.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaBands</a>
                     <a href="pesacard.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaCard</a>
                     <a href="pesamarket.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaMarket</a>
                     <a href="about.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">About Us</a>
-                    <a href="contact.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Contact / Partner</a>
-                    <a href="legal.html" class="rounded px-2 py-2 text-gray-400 transition-colors hover:text-rose-500 lg:hidden">Legal</a>
+                    <a href="contact.html" class="rounded px-2 py-2 text-rose-500 transition-colors hover:text-rose-400">Partner/Contact Us</a>
+                    <a href="legal.html" class="rounded px-2 py-2 text-gray-400 transition-colors hover:text-white lg:hidden">Legal</a>
                 </nav>
 
                 <div class="flex shrink-0 items-center gap-2">
-                    <button id="themeToggle" type="button" class="rounded-lg border border-gray-700 p-2 text-gray-400 transition-colors hover:border-rose-500 hover:text-rose-500" aria-label="Switch to light mode" aria-pressed="false">
-                        <i data-lucide="sun" class="h-5 w-5"></i>
+                    <button id="themeToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white" aria-label="Toggle theme" title="Toggle dark / light mode">
+                        <i id="themeIcon" data-lucide="sun" class="h-4 w-4"></i>
                     </button>
-                    <button id="menuToggle" type="button" class="rounded-lg border border-gray-700 p-2 text-gray-400 transition-colors hover:border-rose-500 hover:text-rose-500 lg:hidden" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation menu">
-                        <i data-lucide="menu" class="h-5 w-5"></i>
+                    <a href="legal.html" class="mr-1 hidden text-xs font-bold text-gray-400 transition-colors hover:text-white lg:block">Legal</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="hidden items-center gap-2 rounded-xl bg-rose-500 px-4 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-rose-600 sm:inline-flex">
+                        <i data-lucide="download" class="h-4 w-4"></i> Get App
+                    </a>
+                    <button id="menuToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white lg:hidden" aria-label="Open navigation menu" aria-expanded="false">
+                        <i id="menuIcon" data-lucide="menu" class="h-5 w-5"></i>
                     </button>
                 </div>
             </div>
+
+            <nav id="mobileMenu" class="mobile-menu hidden border-t border-gray-800 bg-gray-900 px-4 pb-4 pt-3 text-sm font-semibold lg:hidden" aria-label="Mobile navigation">
+                <div class="flex flex-col gap-1">
+                    <a href="fitlovers.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">FitLovers</a>
+                    <a href="step-to-earn.html" class="rounded-lg px-3 py-3 text-rose-500">Make Every Step Count</a>
+                    <a href="pesabands.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">PesaBands</a>
+                    <a href="pesacard.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">PesaCard</a>
+                    <a href="pesamarket.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">PesaMarket</a>
+                    <a href="about.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">About Us</a>
+                    <a href="contact.html" class="rounded-lg px-3 py-3 transition-colors hover:bg-gray-800 hover:text-rose-500">Partner/Contact Us</a>
+                    <div class="mt-2 flex gap-4 border-t border-gray-800 pt-3 text-xs text-gray-400">
+                        <a href="legal.html#faq" class="hover:text-rose-500">FAQ</a>
+                        <a href="legal.html#privacy" class="hover:text-rose-500">POPIA Privacy</a>
+                    </div>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- HERO & VIDEO SHOWCASE -->
-    <section class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:px-8">
+    <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:grid lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
         <div class="space-y-6">
             <span class="text-xs font-bold uppercase tracking-widest text-rose-500">Daily Micro-Earning</span>
-            <h1 class="text-4xl font-black leading-tight sm:text-5xl">Let your daily steps pay for your daily bread.</h1>
-            <p class="text-sm leading-relaxed text-gray-400">Every 500 steps equals 10 programmable FITP loyalty points. Accumulate 5,000 FITP to unlock $1 in local fiat purchasing power. Use it for data, airtime, or subsidized pricing at Shopri.</p>
+            <h1 class="text-4xl font-black leading-tight sm:text-5xl">
+                Let your daily steps pay for your daily bread.
+            </h1>
+            <p class="text-sm leading-relaxed text-gray-400">
+                Every 500 steps equals 10 programmable FITP loyalty points. Accumulate 5,000 FITP to unlock $1 in local fiat purchasing power. Use it for data, airtime, or subsidized pricing at supported local merchants and partner stores.
+            </p>
+
             <div class="flex flex-wrap gap-4 pt-4">
-                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-orange-500 px-6 py-3 text-xs font-bold uppercase text-white transition-opacity hover:opacity-90">
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-rose-500 to-orange-500 px-6 py-3 text-sm font-bold text-white shadow-lg shadow-rose-500/20 transition hover:opacity-90">
                     <i data-lucide="smartphone" class="h-4 w-4"></i> Start Swapping
                 </a>
-                <a href="#calculator" class="flex items-center gap-2 rounded-xl border border-rose-500 px-6 py-3 text-xs font-bold uppercase text-rose-500 transition-colors hover:bg-rose-500/10">
+                <a href="#calculator" class="inline-flex items-center gap-2 rounded-xl border border-rose-500 px-6 py-3 text-xs font-bold uppercase tracking-wide text-rose-500 transition-colors hover:bg-rose-500/10">
                     <i data-lucide="calculator" class="h-4 w-4"></i> Step-to-Cash Calculator
                 </a>
             </div>
@@ -132,11 +157,10 @@
 
         <div class="flex justify-center">
             <div class="relative flex h-[500px] w-64 items-center justify-center overflow-hidden rounded-[2.5rem] border-8 border-gray-800 bg-black shadow-2xl">
-                <div class="absolute inset-0 z-0 flex flex-col items-center justify-center bg-gray-900 p-4 text-center">
+                <div class="absolute inset-0 z-0 flex items-center justify-center bg-gray-900 p-4 text-center">
                     <i data-lucide="video" class="mb-2 h-8 w-8 text-rose-500"></i>
-                    <span class="text-xs text-gray-400">Walking demo</span>
                 </div>
-                <video autoplay loop muted playsinline class="relative z-10 h-full w-full object-cover opacity-95">
+                <video autoplay loop muted playsinline class="relative z-10 h-full w-full object-cover opacity-97">
                     <source src="walking-demo.mp4" type="video/mp4" />
                 </video>
             </div>
@@ -150,21 +174,32 @@
                 <h2 class="text-3xl font-black">Step-to-Cash Projection Engine</h2>
                 <p class="mt-2 text-xs text-gray-400">Calculate your earning velocity across supported regions.</p>
             </div>
+
             <div class="space-y-6 rounded-3xl border border-gray-700 bg-gray-900 p-8 shadow-xl">
                 <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
                     <div>
                         <label for="calcDays" class="mb-2 block text-xs font-bold text-gray-400">Target Days to Walk</label>
-                        <input type="number" id="calcDays" value="30" min="1" class="w-full rounded-xl border border-gray-700 bg-gray-800 p-3 text-sm font-mono focus:border-rose-500 focus:outline-none" />
+                        <input id="calcDays" type="number" value="30" min="1" class="w-full rounded-xl border border-gray-700 bg-gray-800 p-3 text-sm font-mono text-white focus:border-rose-500 focus:outline-none" />
                     </div>
                     <div>
                         <label for="calcSteps" class="mb-2 block text-xs font-bold text-gray-400">Average Daily Steps</label>
-                        <input type="number" id="calcSteps" value="8000" min="500" step="500" class="w-full rounded-xl border border-gray-700 bg-gray-800 p-3 text-sm font-mono focus:border-rose-500 focus:outline-none" />
+                        <input id="calcSteps" type="number" value="8000" min="500" step="500" class="w-full rounded-xl border border-gray-700 bg-gray-800 p-3 text-sm font-mono text-white focus:border-rose-500 focus:outline-none" />
                     </div>
                 </div>
+
                 <div class="grid grid-cols-1 gap-4 border-t border-gray-700 pt-4 md:grid-cols-3">
-                    <div class="rounded-2xl bg-gray-800 p-4 text-center"><div class="mb-1 text-[10px] font-bold uppercase text-gray-400">Total Steps</div><div id="outSteps" class="text-xl font-black text-white">240,000</div></div>
-                    <div class="rounded-2xl bg-gray-800 p-4 text-center"><div class="mb-1 text-[10px] font-bold uppercase text-rose-500">FITP Earned</div><div id="outFitp" class="text-xl font-black text-rose-500">4,800</div></div>
-                    <div class="rounded-2xl bg-gray-800 p-4 text-center"><div class="mb-1 text-[10px] font-bold uppercase text-emerald-500">Estimated Value (USD)</div><div id="outUsd" class="text-xl font-black text-emerald-500">$0.96</div></div>
+                    <div class="rounded-2xl bg-gray-800 p-4 text-center">
+                        <div class="mb-1 text-[10px] font-bold uppercase text-gray-400">Total Steps</div>
+                        <div id="outSteps" class="text-xl font-black text-white">240,000</div>
+                    </div>
+                    <div class="rounded-2xl bg-gray-800 p-4 text-center">
+                        <div class="mb-1 text-[10px] font-bold uppercase text-rose-500">FITP Earned</div>
+                        <div id="outFitp" class="text-xl font-black text-rose-500">4,800</div>
+                    </div>
+                    <div class="rounded-2xl bg-gray-800 p-4 text-center">
+                        <div class="mb-1 text-[10px] font-bold uppercase text-emerald-500">Estimated Value (USD)</div>
+                        <div id="outUsd" class="text-xl font-black text-emerald-500">$0.96</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -174,61 +209,103 @@
     <section class="mx-auto max-w-7xl space-y-8 px-4 py-16 text-center">
         <h3 class="text-sm font-black uppercase tracking-widest text-gray-400">Supported Regional Gateways</h3>
         <div class="flex flex-wrap justify-center gap-3 text-xs font-bold">
-            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">FNB</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Capitec</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Tyme Bank</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Mukuru</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">OPay</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Moniepoint</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">FirstBank</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">GTB</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">M-Pesa</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">MTN MoMo</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Airtel Money</span><span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2 text-rose-500">PayPal (Global)</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">FNB</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Capitec</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Tyme Bank</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Mukuru</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">OPay</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Moniepoint</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">FirstBank</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">GTB</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">M-Pesa</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">MTN MoMo</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2">Airtel Money</span>
+            <span class="rounded-lg border border-gray-700 bg-gray-800 px-4 py-2 text-rose-500">PayPal (Global)</span>
         </div>
     </section>
 
     <footer class="border-t border-gray-800 bg-gray-900 py-12">
         <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 sm:px-6 md:flex-row lg:px-8">
-            <div class="text-center md:text-left"><a href="index.html" aria-label="FitPesa home"><img src="logo.jpeg" alt="FitPesa" class="mx-auto mb-2 h-10 w-auto md:mx-0" /></a><p class="text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa.</p></div>
-            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400"><a href="about.html" class="transition-colors hover:text-rose-500">About</a><a href="contact.html" class="transition-colors hover:text-rose-500">Contact</a><a href="legal.html" class="transition-colors hover:text-rose-500">Legal & Privacy</a><a href="deletion-policy.html" class="text-rose-500 transition-colors hover:text-rose-400">Data Deletion</a></div>
+            <div class="text-center md:text-left">
+                <div class="mb-2 text-2xl font-black tracking-tight">
+                    FiT<span class="text-rose-500">Pesa</span>
+                </div>
+                <p class="text-xs text-gray-500">&copy; 2026 FITPESA (PTY) LTD. Registered in South Africa.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-6 text-xs font-bold text-gray-400">
+                <a href="about.html" class="transition-colors hover:text-white">About</a>
+                <a href="contact.html" class="transition-colors hover:text-white">Contact</a>
+                <a href="legal.html" class="transition-colors hover:text-white">Legal & Privacy</a>
+                <a href="deletion-policy.html" class="text-rose-500 transition-colors hover:text-white">Data Deletion</a>
+            </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" aria-label="Contact FitPesa on WhatsApp" class="fixed bottom-6 right-6 z-50 rounded-full bg-emerald-500 p-4 text-white shadow-2xl transition-colors hover:bg-emerald-600"><i data-lucide="message-circle" class="h-7 w-7"></i></a>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27611858558" target="_blank" rel="noopener noreferrer" aria-label="Contact FitPesa on WhatsApp" class="fixed bottom-6 right-6 z-50 rounded-full bg-emerald-500 p-4 text-white shadow-2xl transition-colors hover:bg-emerald-600">
+        <i data-lucide="message-circle" class="h-7 w-7"></i>
+    </a>
 
     <script>
+        lucide.createIcons();
+
         const body = document.getElementById('body');
         const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
         const menuToggle = document.getElementById('menuToggle');
-        const mainNav = document.getElementById('mainNav');
-        const savedTheme = localStorage.getItem('fitpesa-theme');
+        const mobileMenu = document.getElementById('mobileMenu');
 
         function setTheme(theme) {
             const isLight = theme === 'light';
             body.classList.toggle('light-mode', isLight);
             document.documentElement.dataset.theme = theme;
-            themeToggle.setAttribute('aria-pressed', String(isLight));
+            themeIcon.setAttribute('data-lucide', isLight ? 'moon' : 'sun');
             themeToggle.setAttribute('aria-label', isLight ? 'Switch to dark mode' : 'Switch to light mode');
-            themeToggle.innerHTML = `<i data-lucide="${isLight ? 'moon' : 'sun'}" class="h-5 w-5"></i>`;
-            lucide.createIcons();
             localStorage.setItem('fitpesa-theme', theme);
+            lucide.createIcons();
         }
 
-        function calculateYield() {
-            const days = Math.max(0, parseInt(document.getElementById('calcDays').value, 10) || 0);
-            const dailySteps = Math.max(0, parseInt(document.getElementById('calcSteps').value, 10) || 0);
-            const totalSteps = days * dailySteps;
-            const earnedFitp = Math.floor(totalSteps / 500) * 10;
-            document.getElementById('outSteps').textContent = totalSteps.toLocaleString();
-            document.getElementById('outFitp').textContent = earnedFitp.toLocaleString();
-            document.getElementById('outUsd').textContent = '$' + (earnedFitp / 5000).toFixed(2);
+        function setMenu(open) {
+            mobileMenu.classList.toggle('hidden', !open);
+            menuToggle.setAttribute('aria-expanded', String(open));
+            menuToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+            menuToggle.querySelector('[data-lucide]').setAttribute('data-lucide', open ? 'x' : 'menu');
+            lucide.createIcons();
         }
+
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = body.classList.contains('light-mode') ? 'dark' : 'light';
+            setTheme(nextTheme);
+        });
 
         menuToggle.addEventListener('click', () => {
             const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', String(!isOpen));
-            menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
-            mainNav.classList.toggle('hidden', isOpen);
-            menuToggle.innerHTML = `<i data-lucide="${isOpen ? 'menu' : 'x'}" class="h-5 w-5"></i>`;
-            lucide.createIcons();
+            setMenu(!isOpen);
         });
 
-        themeToggle.addEventListener('click', () => setTheme(body.classList.contains('light-mode') ? 'dark' : 'light'));
-        document.querySelectorAll('#calcDays, #calcSteps').forEach((input) => input.addEventListener('input', calculateYield));
-        setTheme(savedTheme === 'light' ? 'light' : 'dark');
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => setMenu(false));
+        });
+
+        function calculateYield() {
+            const days = parseInt(document.getElementById('calcDays').value) || 0;
+            const dailySteps = parseInt(document.getElementById('calcSteps').value) || 0;
+
+            const totalSteps = days * dailySteps;
+            const earnedFitp = Math.floor(totalSteps / 500) * 10;
+            const valueUsd = earnedFitp / 5000;
+
+            document.getElementById('outSteps').innerText = totalSteps.toLocaleString();
+            document.getElementById('outFitp').innerText = earnedFitp.toLocaleString();
+            document.getElementById('outUsd').innerText = '$' + valueUsd.toFixed(2);
+        }
+
+        document.getElementById('calcDays').addEventListener('input', calculateYield);
+        document.getElementById('calcSteps').addEventListener('input', calculateYield);
+
+        setTheme(localStorage.getItem('fitpesa-theme') || 'dark');
         calculateYield();
-        lucide.createIcons();
     </script>
 </body>
 </html>
