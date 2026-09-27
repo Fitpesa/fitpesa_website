@@ -1,0 +1,99 @@
+<!-- COMPLIANCE TOP BAR -->
+<aside class="border-b border-gray-800 bg-gray-900 px-4 py-2 text-center text-[10px] font-medium sm:text-xs sm:text-left">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-2 sm:justify-between">
+        <div class="flex items-center gap-2 text-gray-400">
+            <span class="inline-block h-2 w-2 animate-pulse rounded-full bg-emerald-500" aria-hidden="true"></span>
+            <span><strong>FITPESA (PTY) LTD</strong> &bull; RSA Reg: <strong>2026/207572/07</strong> &bull; South Africa & Nigeria</span>
+        </div>
+        <div class="hidden items-center gap-4 text-gray-500 sm:flex">
+            <a href="privacy.html" class="transition-colors hover:text-rose-500">Privacy & POPIA</a>
+            <a href="terms.html" class="transition-colors hover:text-rose-500">Terms</a>
+            <a href="deletion-policy.html" class="transition-colors hover:text-rose-500">Data Deletion</a>
+        </div>
+    </div>
+</aside>
+
+<!-- MAIN NAVIGATION -->
+<header class="sticky top-0 z-50 border-b border-gray-800 bg-gray-900/90 backdrop-blur-md transition-colors">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex min-h-20 items-center justify-between gap-4 py-3">
+            <!-- Logo -->
+            <a href="index.html" class="shrink-0" aria-label="FitPesa home">
+                <img src="logo.jpeg" alt="FitPesa" class="h-12 w-auto max-w-[170px] object-contain sm:h-14" />
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav id="mainNav" class="mobile-menu hidden w-full flex-col gap-1 border-t border-gray-800 pt-4 text-sm font-semibold lg:flex lg:w-auto lg:flex-row lg:items-center lg:gap-6 lg:border-0 lg:pt-0">
+                <a href="index.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Home</a>
+                <a href="step-to-earn.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Step-to-Earn</a>
+                <a href="fitlovers.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">FitLovers</a>
+                <a href="pesabands.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaBands</a>
+                <a href="pesacard.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaCard</a>
+                <a href="pesamarket.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">PesaMarket</a>
+                <a href="about.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">About Us</a>
+                <a href="contact.html" class="rounded px-2 py-2 transition-colors hover:text-rose-500">Partner/Contact Us</a>
+                <a href="legal.html" class="rounded px-2 py-2 text-gray-400 transition-colors hover:text-white lg:hidden">Legal</a>
+            </nav>
+
+            <!-- Right Actions -->
+            <div class="flex shrink-0 items-center gap-2">
+                <button id="themeToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white" aria-label="Switch to light mode">
+                    <i data-lucide="sun" class="h-4 w-4"></i>
+                </button>
+                <a href="legal.html" class="mr-1 hidden text-xs font-bold text-gray-400 transition-colors hover:text-white lg:block">Legal</a>
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" rel="noopener noreferrer" class="hidden items-center gap-2 rounded-xl bg-rose-500 px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-rose-600 sm:flex">
+                    <i data-lucide="download" class="h-4 w-4"></i> Get App
+                </a>
+                <button id="menuToggle" type="button" class="rounded-xl border border-gray-700 bg-gray-800 p-2.5 text-gray-300 transition-colors hover:border-rose-500 hover:text-white lg:hidden" aria-label="Open navigation menu" aria-expanded="false">
+                    <i data-lucide="menu" class="h-5 w-5"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Header Initialization Script -->
+<script>
+    (function initializeHeader() {
+        const themeToggle = document.getElementById('themeToggle');
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        const body = document.body;
+
+        // Theme Toggle
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                themeToggle.setAttribute('aria-label', body.classList.contains('light-mode') ? 'Switch to dark mode' : 'Switch to light mode');
+            });
+        }
+
+        // Mobile Menu Toggle
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+                menuToggle.setAttribute('aria-expanded', String(!isOpen));
+                menuToggle.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+                mainNav.classList.toggle('hidden', isOpen);
+                mainNav.classList.toggle('flex', !isOpen);
+                const icon = menuToggle.querySelector('[data-lucide]');
+                if (icon) {
+                    icon.setAttribute('data-lucide', isOpen ? 'menu' : 'x');
+                    lucide?.createIcons?.();
+                }
+            });
+        }
+
+        // Close mobile menu on link click
+        if (mainNav) {
+            mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+                mainNav.classList.add('hidden');
+                mainNav.classList.remove('flex');
+                if (menuToggle) {
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                    menuToggle.setAttribute('aria-label', 'Open navigation menu');
+                }
+            }));
+        }
+    })();
+</script>
