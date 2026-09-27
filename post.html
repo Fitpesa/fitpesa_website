@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check out this post on FitLovers — connect with fitness enthusiasts and earn FITP tokens by walking on FitPesa.">
+    <meta name="author" content="FitPesa Limited">
+    <!-- Open Graph / Twitter. Note: these are static defaults — link-preview
+         crawlers (WhatsApp/Twitter) don't run JS, so they see this generic card,
+         not the specific post. Humans who open the link get the real post below. -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://fitpesa.org/post/">
+    <meta property="og:title" content="A post on FitLovers — FitPesa">
+    <meta property="og:description" content="Connect with fitness enthusiasts, share your journey, and earn FITP tokens by walking.">
+    <meta property="og:image" content="https://fitpesa.org/logo.jpeg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="A post on FitLovers — FitPesa">
+    <meta property="twitter:description" content="Connect with fitness enthusiasts, share your journey, and earn FITP tokens by walking.">
+    <meta property="twitter:image" content="https://fitpesa.org/logo.jpeg">
+    <title>FitLovers — FitPesa</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0b0b0c; color: #fff;
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 24px; text-align: center;
+        }
+        .wrap { max-width: 480px; width: 100%; }
+        h1 { font-size: 22px; margin-bottom: 16px; }
+        .card {
+            background: #161618; border-radius: 16px; padding: 20px;
+            text-align: left; margin-bottom: 24px;
+        }
+        .card img { width: 100%; border-radius: 12px; margin-bottom: 12px; }
+        .author { font-weight: 600; margin-bottom: 12px; }
+        .content { margin-bottom: 12px; line-height: 1.5; }
+        .stats { font-size: 14px; color: #9ca3af; }
+        .muted { color: #9ca3af; margin-bottom: 24px; }
+        .btn {
+            display: block; background: #22c55e; color: #06210f; font-weight: 700;
+            padding: 14px 20px; border-radius: 12px; text-decoration: none; margin-bottom: 12px;
+        }
+        .stores { display: flex; gap: 16px; justify-content: center; }
+        .stores a { color: #22c55e; text-decoration: none; }
+        .spinner { color: #9ca3af; }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>💪 FitLovers</h1>
+        <div id="post"><p class="spinner">Loading…</p></div>
+        <a class="btn" id="openApp" href="#">Open in the FitPesa app</a>
+        <div class="stores">
+            <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile">Get it on Google Play</a>
+            <a href="https://apps.apple.com/app/fitpesa">App Store</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        // Public web fallback for shared FitLovers posts (https://fitpesa.org/post/<id>).
+        // With the app installed + App Links verified, Android opens the post in-app
+        // and this page is never seen. Otherwise it renders a preview + store CTA,
+        // replacing the old 404. Public posts only (anon key + is_public).
+        var SUPABASE_URL = 'https://uwuexbvplcubqmmnvvlu.supabase.co';
+        // Public anon key — safe to ship; RLS + is_public filter protect private data.
+        var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3dWV4YnZwbGN1YnFtbW52dmx1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY3MTQ0NjAsImV4cCI6MjA3MjI5MDQ2MH0.zt9eEv4F8VC_fP1R-bzkWdPa6Ui4iqriySxo7Kc6S9M';
+
+        function postIdFromUrl() {
+            // Supports /post/<id> (rewritten) and ?id=<id> fallback.
+            var m = window.location.pathname.match(/\/post\/([^\/?#]+)/);
+            if (m && m[1]) return decodeURIComponent(m[1]);
+            return new URLSearchParams(window.location.search).get('id');
+        }
+
+        function esc(s) {
+            var d = document.createElement('div'); d.textContent = s == null ? '' : String(s);
+            return d.innerHTML;
+        }
+
+        var id = postIdFromUrl();
+        document.getElementById('openApp').href = id ? ('fitpesa://post/' + id) : '#';
+        var el = document.getElementById('post');
+
+        function renderMissing() {
+            el.innerHTML = '<p class="muted">This post is private or no longer available — but there’s plenty more in the app.</p>';
+        }
+
+        if (!id) {
+            renderMissing();
+        } else {
+            var sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            sb.from('fitlovers_posts')
+              .select('id, content, image_url, workout_duration_mins, calories_burned, steps_count, is_public, user_id')
+              .eq('id', id).eq('is_public', true).maybeSingle()
+              .then(function (res) {
+                  var post = res.data;
+                  if (!post) { renderMissing(); return; }
+                  return sb.from('users').select('name, username')
+                           .eq('auth_id', post.user_id).maybeSingle()
+                           .then(function (u) {
+                      var who = (u.data && (u.data.name || u.data.username)) || 'A FitLover';
+                      var stats = '';
+                      if (post.workout_duration_mins) stats += '⏱️ ' + esc(post.workout_duration_mins) + ' mins  ';
+                      if (post.calories_burned) stats += '🔥 ' + esc(post.calories_burned) + ' cal  ';
+                      if (post.steps_count) stats += '👟 ' + esc(post.steps_count) + ' steps';
+                      el.innerHTML =
+                          '<div class="card">' +
+                            '<div class="author">' + esc(who) + '</div>' +
+                            (post.image_url ? '<img src="' + esc(post.image_url) + '" alt="Post">' : '') +
+                            (post.content ? '<div class="content">' + esc(post.content) + '</div>' : '') +
+                            (stats ? '<div class="stats">' + stats + '</div>' : '') +
+                          '</div>';
+                  });
+              })
+              .catch(function () { renderMissing(); });
+        }
+    </script>
+</body>
+</html>
