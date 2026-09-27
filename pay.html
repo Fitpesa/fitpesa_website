@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PesaCard & PesaBands Hardware Hub · FitPesa</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            coral: '#FF416C',
+                            orange: '#FF4B2B',
+                            amber: '#F59E0B'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --bg-main: #FAFAFC;
+            --bg-card: #FFFFFF;
+            --bg-surface: #F3F4F6;
+            --text-main: #111827;
+            --text-muted: #4B5563;
+            --border-color: #E5E7EB;
+            --nav-glass: rgba(255, 255, 255, 0.88);
+        }
+
+        html.dark {
+            --bg-main: #0B0B10;
+            --bg-card: #14151F;
+            --bg-surface: #1C1E2D;
+            --text-main: #F3F4F6;
+            --text-muted: #9CA3AF;
+            --border-color: #282A3E;
+            --nav-glass: rgba(14, 15, 21, 0.88);
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+        }
+
+        .theme-surface {
+            background-color: var(--bg-surface);
+        }
+
+        .gradient-brand {
+            background: linear-gradient(135deg, #FF416C 0%, #FF4B2B 100%);
+        }
+
+        .glass-nav {
+            background: var(--nav-glass);
+            backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-coral selection:text-white">
+
+    <!-- NAVIGATION -->
+    <header class="sticky top-0 z-50 glass-nav border-b" style="border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
+            <!-- Logo (Routes Back Home) -->
+            <a href="index.html" class="flex items-center gap-3.5">
+                <div class="w-10 h-10 rounded-2xl gradient-brand flex items-center justify-center p-1.5 shadow-lg shadow-brand-coral/25">
+                    <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+                </div>
+                <div>
+                    <div class="text-2xl font-black tracking-tight leading-none">
+                        FiT<span class="text-brand-coral">Pesa</span>
+                    </div>
+                    <div class="text-[8px] font-black uppercase tracking-widest text-brand-orange mt-1">
+                        &bull; HEALTH. WEALTH. LOVE &bull;
+                    </div>
+                </div>
+            </a>
+
+            <nav class="hidden lg:flex gap-6 text-xs font-semibold">
+                <a href="index.html" class="hover:text-brand-coral transition-colors">Home</a>
+                <a href="fitlovers.html" class="hover:text-brand-coral transition-colors">Step-to-Earn</a>
+                <a href="market.html" class="hover:text-brand-coral transition-colors">PesaMarket & SNPL</a>
+                <a href="pay.html" class="text-brand-coral font-bold hover:underline">PesaCard & Hardware</a>
+                <a href="about.html" class="hover:text-brand-coral transition-colors">About & Tokenomics</a>
+                <a href="support.html" class="hover:text-brand-coral transition-colors">Contact / Support</a>
+                <a href="privacy.html" class="hover:text-brand-coral transition-colors">Legal & POPIA</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-2">
+                <a href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile" target="_blank" class="gradient-brand text-white text-xs font-bold uppercase tracking-wider px-4 py-2.5 rounded-xl flex items-center gap-1.5">
+                    <i data-lucide="play" class="w-3.5 h-3.5 fill-white"></i> Play Store
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-500 text-xs font-bold uppercase tracking-widest">
+            <i data-lucide="credit-card" class="w-4 h-4"></i> Offline Payments & Hardware
+        </div>
+        <h1 class="text-4xl sm:text-5xl font-black leading-tight max-w-3xl mx-auto">
+            Take FITP Offline with <span class="text-emerald-500">PesaCard & PesaBands.</span>
+        </h1>
+        <p class="text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed" style="color: var(--text-muted);">
+            Spend FITP tokens offline using virtual/physical NFC passes or standalone LTE PesaBands smartwatches[cite: 2, 6, 7]. No active mobile internet required[cite: 2, 6].
+        </p>
+    </section>
+
+    <!-- HARDWARE MATRIX -->
+    <section class="py-16 theme-surface border-y" style="border-color: var(--border-color);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-black">PesaBands Smartwatch Range</h2>
+                <p class="text-xs mt-1" style="color: var(--text-muted);">Independent LTE, SOS alerts, and offline step logging[cite: 7].</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- M1 -->
+                <div class="theme-card rounded-3xl p-6 relative">
+                    <div class="text-xs font-bold text-brand-coral uppercase mb-1">Model M1</div>
+                    <h3 class="text-xl font-black mb-2">PesaBand Lite</h3>
+                    <p class="text-xs mb-4" style="color: var(--text-muted);">Essential step tracking, offline syncing, and NFC tap-to-pay[cite: 7].</p>
+                    <a href="support.html#hardware" class="block w-full text-center py-3 theme-surface border rounded-xl text-xs font-bold uppercase">Preorder M1</a>
+                </div>
+
+                <!-- M2 -->
+                <div class="theme-card rounded-3xl p-6 border-2 border-brand-amber relative shadow-xl">
+                    <div class="text-xs font-bold text-brand-amber uppercase mb-1">Model M2</div>
+                    <h3 class="text-xl font-black mb-2">PesaBand Pro</h3>
+                    <p class="text-xs mb-4" style="color: var(--text-muted);">Answer audio calls and reply to texts directly from your wrist[cite: 7].</p>
+                    <a href="support.html#hardware" class="block w-full text-center py-3 gradient-brand text-white rounded-xl text-xs font-bold uppercase">Preorder M2</a>
+                </div>
+
+                <!-- M3 -->
+                <div class="theme-card rounded-3xl p-6 relative">
+                    <div class="text-xs font-bold text-emerald-500 uppercase mb-1">Model M3</div>
+                    <h3 class="text-xl font-black mb-2">PesaBand Premium</h3>
+                    <p class="text-xs mb-4" style="color: var(--text-muted);">Features front-facing selfie camera, video calls, and fall detection[cite: 7].</p>
+                    <a href="support.html#hardware" class="block w-full text-center py-3 theme-surface border rounded-xl text-xs font-bold uppercase">Preorder M3</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="theme-surface border-t py-12 text-center text-xs" style="border-color: var(--border-color);">
+        <p style="color: var(--text-muted);">&copy; 2026 FITPESA (PTY) LTD. All rights reserved. Registered in South Africa[cite: 1].</p>
+    </footer>
+
+    <!-- PERSISTENT FLOATING WHATSAPP -->
+    <a href="https://wa.me/27611858558?text=Hello%20FitPesa%20Team" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-transform">
+        <i data-lucide="message-circle" class="w-6 h-6"></i>
+    </a>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
