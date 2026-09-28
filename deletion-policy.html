@@ -100,48 +100,59 @@
                 <h2 class="flex items-center gap-2 text-xl font-bold sm:text-2xl">
                     <i data-lucide="user-x" class="h-6 w-6 text-rose-500"></i> Submit Online Deletion Request
                 </h2>
-                <p class="mt-1 text-xs text-gray-400">Fill out the form below to initiate complete removal of your FitPesa account and related personal records.</p>
+                <p class="mt-1 text-xs text-gray-400">Use this form if you can't delete your account from the app. We'll contact you at the email or phone number you give to confirm the account is yours, then complete your request within 30 days.</p>
             </div>
 
-            <form id="deletionForm" onsubmit="handleDeletionSubmit(event)" class="space-y-5">
+            <form id="deletionForm" onsubmit="handleDeletionSubmit(event)" class="space-y-5" novalidate>
+                <!-- Spam trap: hidden from people, filled in by bots. -->
+                <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">
+                    <label>Leave this empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+                </div>
                 <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
                     <div>
                         <label class="mb-2 block text-xs font-bold text-gray-300">Full Name *</label>
-                        <input type="text" required placeholder="John Doe" class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
+                        <input type="text" name="full_name" required maxlength="120" autocomplete="name" placeholder="John Doe" class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
                     </div>
                     <div>
                         <label class="mb-2 block text-xs font-bold text-gray-300">FitPesa App Email / Mobile *</label>
-                        <input type="text" required placeholder="user@example.com or +27..." class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
+                        <input type="text" name="contact" required maxlength="160" autocomplete="email" placeholder="user@example.com or +27..." class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
                     </div>
                 </div>
 
                 <div>
                     <label class="mb-2 block text-xs font-bold text-gray-300">FitPesa Username (Optional)</label>
-                    <input type="text" placeholder="@username" class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
+                    <input type="text" name="username" maxlength="80" placeholder="@username" class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
                 </div>
 
                 <div>
                     <label class="mb-2 block text-xs font-bold text-gray-300">Scope of Request *</label>
-                    <select required class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
+                    <select name="scope" required class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500">
                         <option value="full">Complete Account & Data Deletion (Permanent)</option>
-                        <option value="fitness_only">Fitness & Step Activity Log Removal Only</option>
-                        <option value="marketing_only">Opt-out & Delete Marketing/Communication Records</option>
+                        <option value="activity">Fitness & Step Activity Log Removal Only</option>
+                        <option value="marketing">Opt-out & Delete Marketing/Communication Records</option>
                     </select>
                 </div>
 
                 <div>
                     <label class="mb-2 block text-xs font-bold text-gray-300">Reason for Request (Optional)</label>
-                    <textarea rows="3" placeholder="Let us know why you are leaving..." class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500"></textarea>
+                    <textarea name="reason" rows="3" maxlength="1000" placeholder="Let us know why you are leaving..." class="w-full rounded-xl border border-gray-700 bg-gray-900 p-3 text-sm focus:outline-none focus:border-rose-500"></textarea>
                 </div>
 
                 <div class="flex items-start gap-3 rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4">
-                    <input type="checkbox" required class="mt-1 h-5 w-5 shrink-0 accent-rose-500 rounded cursor-pointer">
-                    <label class="cursor-pointer text-xs leading-relaxed text-gray-300">I understand that submitting this request will permanently erase my account profile, active FITP token balance, step history, and saved preferences. This action cannot be reversed.</label>
+                    <input type="checkbox" name="confirm" id="deletionConfirm" required class="mt-1 h-5 w-5 shrink-0 accent-rose-500 rounded cursor-pointer">
+                    <label for="deletionConfirm" class="cursor-pointer text-xs leading-relaxed text-gray-300">I understand that submitting this request will permanently erase my account profile, active FITP token balance, step history, and saved preferences. This action cannot be reversed.</label>
                 </div>
 
-                <button type="submit" class="w-full rounded-xl bg-rose-500 px-4 py-4 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-rose-600">Request Account & Data Deletion</button>
+                <button type="submit" class="w-full rounded-xl bg-rose-500 px-4 py-4 text-xs font-bold uppercase tracking-wider text-white transition-colors hover:bg-rose-600 disabled:cursor-wait disabled:opacity-60">Request Account & Data Deletion</button>
 
-                <div id="deletionSuccess" class="hidden rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-4 text-center text-sm font-bold text-emerald-500">Deletion request submitted successfully. A confirmation email has been sent to your registered address.</div>
+                <div id="deletionSuccess" role="status" class="hidden rounded-xl border border-emerald-500/20 bg-emerald-500/10 p-4 text-center text-sm text-emerald-400">
+                    <p class="font-bold">Request received. Your reference is <span id="deletionRef" class="font-mono"></span>.</p>
+                    <p class="mt-2 text-xs text-gray-300">Keep this reference. We'll contact you at the email or phone number you gave to confirm the account is yours, then complete your request within 30 days. If you still have the app, deleting from the app is instant.</p>
+                </div>
+                <div id="deletionError" role="alert" class="hidden rounded-xl border border-rose-500/30 bg-rose-500/10 p-4 text-center text-sm text-rose-300">
+                    <p id="deletionErrorText" class="font-bold"></p>
+                    <p class="mt-2 text-xs text-gray-300">You can also email <a class="underline" href="mailto:fitpesa@fitpesa.org?subject=Delete%20my%20account">fitpesa@fitpesa.org</a> with the subject &ldquo;Delete my account&rdquo; from the email address on your FitPesa account.</p>
+                </div>
             </form>
         </div>
 
@@ -153,9 +164,10 @@
                 <h3 class="text-xl font-bold">In-App Account Deletion</h3>
                 <p class="text-xs leading-relaxed text-gray-400">You can also trigger account deletion directly inside the FitPesa mobile application:</p>
                 <ol class="list-inside list-decimal space-y-2 text-xs font-medium text-gray-300">
-                    <li>Open the FitPesa App on your device.</li>
-                    <li>Go to Profile Settings → Privacy & Security.</li>
-                    <li>Tap Delete My Account and confirm your passcode/OTP.</li>
+                    <li>Open the FitPesa app and sign in.</li>
+                    <li>Go to the Profile tab and scroll to the bottom.</li>
+                    <li>Tap Delete Account, type DELETE to confirm, and tap Delete.</li>
+                    <li>Your account is deleted immediately and you are signed out.</li>
                 </ol>
             </div>
 
@@ -166,7 +178,7 @@
                 <h3 class="text-xl font-bold">Data Handling & Retention</h3>
                 <p class="text-xs leading-relaxed text-gray-400">Upon account deletion:</p>
                 <ul class="list-inside list-disc space-y-2 text-xs font-medium text-gray-300">
-                    <li><strong>Deleted Immediately:</strong> Name, email, mobile number, step/location logs, and avatar profiles.</li>
+                    <li><strong>Deleted:</strong> Name, email, mobile number, profile photo, step history, posts, comments, chats and identity-verification documents. In-app deletion is immediate; web requests are completed within 30 days of confirming the account is yours.</li>
                     <li><strong>Retained Data:</strong> Anonymized transaction records required for tax, financial auditing, or fraud prevention compliance (held for up to 5 years as required by law).</li>
                 </ul>
             </div>
@@ -220,13 +232,62 @@
             lucide.createIcons();
         }
 
-        function handleDeletionSubmit(event) {
+        const DELETION_ENDPOINT = 'https://uwuexbvplcubqmmnvvlu.supabase.co/functions/v1/account-deletion-request';
+
+        async function handleDeletionSubmit(event) {
             event.preventDefault();
+            const form = event.target;
+            const button = form.querySelector('button[type="submit"]');
             const successBox = document.getElementById('deletionSuccess');
-            if (successBox) {
-                successBox.classList.remove('hidden');
-                document.getElementById('deletionForm').reset();
-                setTimeout(() => successBox.classList.add('hidden'), 6000);
+            const errorBox = document.getElementById('deletionError');
+            const errorText = document.getElementById('deletionErrorText');
+            successBox.classList.add('hidden');
+            errorBox.classList.add('hidden');
+
+            const showError = (message) => {
+                errorText.textContent = message;
+                errorBox.classList.remove('hidden');
+            };
+
+            if (!form.checkValidity()) {
+                showError('Please fill in your name and your FitPesa email or phone, and tick the confirmation box.');
+                return;
+            }
+
+            const data = new FormData(form);
+            const payload = {
+                full_name: data.get('full_name'),
+                contact: data.get('contact'),
+                username: data.get('username'),
+                scope: data.get('scope'),
+                reason: data.get('reason'),
+                confirm: data.get('confirm') === 'on',
+                website: data.get('website'),
+            };
+
+            const label = button.textContent;
+            button.disabled = true;
+            button.textContent = 'Submitting…';
+            try {
+                const response = await fetch(DELETION_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload),
+                });
+                const result = await response.json().catch(() => ({}));
+                if (response.ok && result.success) {
+                    document.getElementById('deletionRef').textContent = result.reference;
+                    successBox.classList.remove('hidden');
+                    form.reset();
+                    successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    showError(result.message || 'We could not submit your request.');
+                }
+            } catch (err) {
+                showError('We could not reach FitPesa. Check your connection and try again.');
+            } finally {
+                button.disabled = false;
+                button.textContent = label;
             }
         }
 
