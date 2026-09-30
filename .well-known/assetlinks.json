@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.fitpesa.mobile",
+      "sha256_cert_fingerprints": [
+        "2C:B3:1D:E5:23:92:92:B6:13:06:89:DF:37:BD:15:35:8B:30:E9:17:91:99:CC:1F:FE:15:9D:D4:2B:DF:5D:42",
+        "27:73:45:23:EE:D5:D1:B9:D4:AD:95:95:55:33:4D:CC:DC:BC:FC:3F:B3:FF:51:9C:C6:E1:99:4F:DF:19:AB:67"
+      ]
+    }
+  }
+]

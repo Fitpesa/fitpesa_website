@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitPesa</title>
+    <script>
+        // GitHub Pages serves this page for any path without a file. App links
+        // shared from FitPesa land here when the app isn't installed (with it
+        // installed, Android opens them in the app and this never loads):
+        //   /post/<id>   → the post preview page
+        //   /refer/<id>  → Play Store, carrying the referral so it credits on
+        //                  first launch (same referrer the app's invite uses)
+        //   /ref?id=<x>  → Play Store (older links from the website generator)
+        (function () {
+            var path = window.location.pathname;
+            var store = 'https://play.google.com/store/apps/details?id=com.fitpesa.mobile';
+            var m = path.match(/^\/post\/([^\/?#]+)\/?$/);
+            if (m) {
+                window.location.replace('/post?id=' + encodeURIComponent(decodeURIComponent(m[1])));
+                return;
+            }
+            m = path.match(/^\/refer\/([^\/?#]+)\/?$/);
+            var ref = m ? decodeURIComponent(m[1])
+                        : (/^\/ref\/?$/.test(path) ? new URLSearchParams(window.location.search).get('id') : null);
+            if (m || /^\/ref\/?$/.test(path)) {
+                window.location.replace(ref
+                    ? store + '&referrer=' + encodeURIComponent('utm_source=referral&utm_content=' + ref)
+                    : store);
+            }
+        })();
+    </script>
+    <style>
+        body {
+            margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #0b0b0c; color: #fff; text-align: center; padding: 24px; box-sizing: border-box;
+        }
+        h1 { font-size: 22px; margin: 0 0 12px; }
+        p { color: #9ca3af; margin: 0 0 24px; }
+        a.btn {
+            display: inline-block; background: #CE3B28; color: #fff; text-decoration: none;
+            font-weight: 700; padding: 12px 22px; border-radius: 12px; margin: 4px;
+        }
+        a.btn.ghost { background: transparent; border: 1px solid #3f3f46; }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>We couldn't find that page</h1>
+        <p>It may have moved, or the link is mistyped.</p>
+        <a class="btn" href="/">Go to FitPesa</a>
+        <a class="btn ghost" href="https://play.google.com/store/apps/details?id=com.fitpesa.mobile">Get the app</a>
+    </main>
+</body>
+</html>
