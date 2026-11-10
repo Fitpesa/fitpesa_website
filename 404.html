@@ -12,9 +12,15 @@
         //   /refer/<id>  → Play Store, carrying the referral so it credits on
         //                  first launch (same referrer the app's invite uses)
         //   /ref?id=<x>  → Play Store (older links from the website generator)
+        //   /club/<id>?code=<c> → Play Store (a club shared from the app; once
+        //                  installed, the link opens the club in the app)
         (function () {
             var path = window.location.pathname;
             var store = 'https://play.google.com/store/apps/details?id=com.fitpesa.mobile';
+            if (/^\/club\/[^\/?#]+\/?$/.test(path)) {
+                window.location.replace(store);
+                return;
+            }
             var m = path.match(/^\/post\/([^\/?#]+)\/?$/);
             if (m) {
                 window.location.replace('/post?id=' + encodeURIComponent(decodeURIComponent(m[1])));
