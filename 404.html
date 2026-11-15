@@ -31,7 +31,9 @@
                 var q = new URLSearchParams(window.location.search);
                 var referrer = 'utm_source=fitpesa_link&utm_content=' + shared[1] + ':' + id;
                 var code = ok(q.get('code'));
-                var ref = ok(q.get('ref'));
+                // The sharer is an account id (a UUID); anything else is dropped.
+                var r = q.get('ref');
+                var ref = r && /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(r) ? r : null;
                 if (code) referrer += '&utm_term=' + code;
                 if (ref) referrer += '&utm_campaign=' + ref;
                 window.location.replace(store + '&referrer=' + encodeURIComponent(referrer));
