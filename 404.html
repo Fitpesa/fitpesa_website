@@ -12,13 +12,31 @@
         //   /refer/<id>  → Play Store, carrying the referral so it credits on
         //                  first launch (same referrer the app's invite uses)
         //   /ref?id=<x>  → Play Store (older links from the website generator)
-        //   /club/<id>?code=<c> → Play Store (a club shared from the app; once
-        //                  installed, the link opens the club in the app)
+        //   /club/<id>?code=<c>&ref=<r>, /challenge/<id>?ref=<r>
+        //                → Play Store, carrying the invite in the referrer
+        //                  (utm_source=fitpesa_link; the app opens the club or
+        //                  challenge after sign-up and credits <r>, the sharer)
         (function () {
             var path = window.location.pathname;
             var store = 'https://play.google.com/store/apps/details?id=com.fitpesa.mobile';
-            if (/^\/club\/[^\/?#]+\/?$/.test(path)) {
-                window.location.replace(store);
+            var shared = path.match(/^\/(club|challenge)\/([^\/?#]+)\/?$/);
+            if (shared) {
+                var ok = function (v) { return v && /^[A-Za-z0-9_-]+$/.test(v) ? v : null; };
+                var id = null;
+                try { id = ok(decodeURIComponent(shared[2])); } catch (e) {}
+                if (!id) {
+                    window.location.replace(store);
+                    return;
+                }
+                var q = new URLSearchParams(window.location.search);
+                var referrer = 'utm_source=fitpesa_link&utm_content=' + shared[1] + ':' + id;
+                var code = ok(q.get('code'));
+                // The sharer is an account id (a UUID); anything else is dropped.
+                var r = q.get('ref');
+                var ref = r && /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(r) ? r : null;
+                if (code) referrer += '&utm_term=' + code;
+                if (ref) referrer += '&utm_campaign=' + ref;
+                window.location.replace(store + '&referrer=' + encodeURIComponent(referrer));
                 return;
             }
             var m = path.match(/^\/post\/([^\/?#]+)\/?$/);
